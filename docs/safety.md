@@ -6,7 +6,7 @@
 - Use current-limited bench supply for first electronics checks.
 - Verify motor direction and limits at low torque/current first.
 - Keep clear of moving joints during bring-up.
-- Never run unattended during first calibration passes.
+- Never run unattended during first powered motion passes.
 
 ## Power bring-up rules
 

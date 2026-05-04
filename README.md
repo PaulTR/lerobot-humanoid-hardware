@@ -29,23 +29,23 @@ Referenced IDs:
 ## Repository layout
 
 - `docs/`: architecture, guides, and procedures
-- `hardware/cad/`: CAD source notes and exported geometry (`step`, `stl`)
+- `hardware/cad/`: Onshape source reference and exported STL geometry
 - `hardware/bom/`: BOM in machine-readable and human-readable formats
 - `hardware/config/`: motor commissioning utilities
 - `hardware/electronics/`: wiring and connector mapping
 
 ## CAD organization
 
-`hardware/cad/` is now split by side and subassembly:
-- `biped_platform/left_leg/{hipx_subassembly,hipy_subassembly,thigh_subassembly,shin_subassembly,ankle_subassembly,foot_subassembly,frames}`
-- `biped_platform/right_leg/{hipx_subassembly,hipy_subassembly,thigh_subassembly,shin_subassembly,ankle_subassembly,foot_subassembly,frames}`
-- `biped_platform/torso_subassembly`
+`hardware/cad/stl/` is split by side and subassembly:
+- `biped_platform/left_leg/{hipx,hipz,thigh,knee_mechanism,shin,ankle_mechanism,ankle,foot}`
+- `biped_platform/right_leg/{hipx,hipz,thigh,knee_mechanism,shin,ankle_mechanism,ankle,foot}`
+- `biped_platform/torso`
 
 This mirrors the assembly view and makes part export placement explicit.
 
 ## Runtime integration
 
-Runtime repository (model and full-robot calibration) lives in:
+Runtime repository (robot model and control runtime) lives in:
 - `../lerobot_humanoid_runtime`
 
 Motor commissioning script in this repo is self-contained and does **not** depend on `robstride_toolkit`.
@@ -71,6 +71,7 @@ Assumptions:
 - prices are indicative and vendor-dependent
 - excludes shipping, import duties, and local taxes
 - fastener prices use bulk-piece estimates
+- `hipx` M3 screw line is optional and can be removed without issue
 
 | Subassembly | Category | Name | Specification | Qty (robot) | Unit est. (USD) | Subtotal est. (USD) |
 |---|---|---|---|---:|---:|---:|
@@ -87,7 +88,7 @@ Assumptions:
 | torso | fastener_screw | M3 screw | M3 x 8 cyl head | 12 | 0.10 | 1.20 |
 | torso | fastener_screw | M4 screw | M4 x 20 cyl head | 16 | 0.14 | 2.24 |
 | torso | fastener_screw | M5 screw | M5 x 10 cyl head | 5 | 0.20 | 1.00 |
-| hipx | fastener_screw | M3 screw | M3 x ? cyl head | 6 | 0.10 | 0.60 |
+| hipx | fastener_screw | M3 screw | M3 x 8 cyl head | 6 | 0.10 | 0.60 |
 | hipx | fastener_screw | M4 screw | M4 x 40 cyl head | 12 | 0.17 | 2.04 |
 | hipx | fastener_screw | M4 screw | M4 x 40-50 cyl head | 18 | 0.20 | 3.60 |
 | hipx | fastener_screw | M4 screw | M4 x 8 cyl head | 16 | 0.10 | 1.60 |
@@ -152,4 +153,3 @@ Price anchors used for key components:
 - Bearing 5x16x5 reference price: https://www.123bearing.com/bearing-housing/deep-groove-bearing/single-row/625
 - Bearing 35x72x17 reference price: https://roulement.net/en-us/products/6207-du-nsk
 - PLA+ reference price: https://us.elegoo.com/products/elegoo-rapid-pla-plus-filament-1-75mm-colored-1kg
-

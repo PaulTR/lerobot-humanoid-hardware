@@ -12,7 +12,7 @@ torso,fastener_screw,M2.5 screw,M2.5 x 20 cyl head,9,9
 torso,fastener_screw,M3 screw,M3 x 8 cyl head,12,12
 torso,fastener_screw,M4 screw,M4 x 20 cyl head,16,16
 torso,fastener_screw,M5 screw,M5 x 10 cyl head,5,5
-hipx,fastener_screw,M3 screw,M3 x ? cyl head,3,6
+hipx,fastener_screw,M3 screw,M3 x 8 cyl head,3,6
 hipx,fastener_screw,M4 screw,M4 x 40 cyl head,6,12
 hipx,fastener_screw,M4 screw,M4 x 40-50 cyl head,9,18
 hipx,fastener_screw,M4 screw,M4 x 8 cyl head,8,16

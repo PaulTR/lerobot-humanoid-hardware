@@ -5,8 +5,13 @@ Electronics documentation for the biped platform.
 Core artifacts:
 - full wiring diagram image (`hardware/electronics/wiring_diagram.png`)
 - connector and pin mapping (`hardware/electronics/connectors.md`)
+- connector photo catalog (`hardware/electronics/connectors_photos/`)
+- leg sub-cable diagrams with embedded images (`hardware/electronics/cabling/README.md`)
 - power distribution notes
 - controller and actuator bus topology
+
+Leg sub-cable set (same cabling for left and right leg):
+- legend, shin, thigh, and hip pass-through diagrams are embedded in `hardware/electronics/cabling/README.md`.
 
 Motor pre-assembly commissioning:
 - detailed workflow: `docs/electronics/motor_commissioning.md`

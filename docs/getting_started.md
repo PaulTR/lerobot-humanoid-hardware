@@ -18,11 +18,10 @@ cd lerobot-humanoid-hardware
 - Assembly work: start with `docs/assembly/`
 - Manufacturing work: start with `docs/manufacturing/`
 - Electronics work: start with `docs/electronics/`
-- Calibration work: start with `docs/calibration/`
 
 ## 4. Runtime dependency
 
-Full-robot calibration/model runtime lives at:
+Full robot runtime and model live at:
 - `../lerobot_humanoid_runtime`
 
 `commission_motor.py` in this repo is self-contained and does not require runtime/toolkit imports.
@@ -43,12 +42,7 @@ This wizard can:
 - assign final motor ID from model ID map
 - run motor motion check (`0 deg -> 90 deg for 1 s -> 0 deg`)
 
-## 6. Calibration boundary
-
-Joint calibration is handled in `lerobot_humanoid_runtime` after full robot assembly.
-This hardware repo only contains pre-assembly commissioning (`commission_motor.py`).
-
-## 7. Before first power-on
+## 6. Before first power-on
 
 Follow both runbooks:
 - `docs/electronics/check_wiring.md`

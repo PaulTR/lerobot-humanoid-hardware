@@ -25,6 +25,18 @@ Reference files:
 - `hardware/bom/bom_buy.csv`
 - `docs/manufacturing/printing_guide.md`
 - `docs/electronics/motor_commissioning.md`
+- `hardware/electronics/cabling/README.md`
+
+Leg cabling note:
+- Left and right legs use the same sub-cable design and routing logic.
+- Cable legend: red = power, green = CAN, blue = CAN + power.
+
+Leg cabling integration order (both legs):
+1. Prepare three sub-cables using `hardware/electronics/cabling/README.md`: shin, thigh, hip pass-through.
+2. Install the shin sub-cable during `shin` assembly, before final closure.
+3. Install the thigh sub-cable during `thigh` assembly, before final tightening.
+4. Route the hip pass-through sub-cable during `hipz` integration.
+5. Join leg cables to torso harness during final leg-to-torso integration.
 
 Spacer coverage check:
 - Spacers are documented via STL lists in each relevant subassembly section.
@@ -73,10 +85,12 @@ Assembly steps:
 Components:
 | Category | Name | Specification | Qty / Subassembly | Qty / Robot |
 |---|---|---|---:|---:|
-| fastener_screw | M3 screw | M3 x ? cyl head | 3 | 6 |
+| fastener_screw | M3 screw | M3 x 8 cyl head | 3 | 6 |
 | fastener_screw | M4 screw | M4 x 40 cyl head | 6 | 12 |
 | fastener_screw | M4 screw | M4 x 40-50 cyl head | 9 | 18 |
 | fastener_screw | M4 screw | M4 x 8 cyl head | 8 | 16 |
+
+> Comment: the `hipx` M3 screw line is optional and can be removed without issue.
 
 STL To Print:
 | Name | Quantity |
@@ -111,7 +125,8 @@ Assembly steps:
 1. Insert hipz bearings.
 2. Place and screw the motor.
 3. Insert the axis in the previous assembly, then screw it.
-4. Assemble the bearing to the hipz assembly and verify free motion.
+4. Route the hip pass-through sub-cable through hipz according to `hardware/electronics/cabling/README.md`.
+5. Assemble the bearing to the hipz assembly and verify free motion.
 
 ## thigh
 
@@ -139,8 +154,9 @@ STL To Print:
 Assembly steps:
 1. Prepare both thigh parts but keep them separate initially.
 2. Do the shape assembly of thigh around the previous joint first.
-3. Once position is correct, screw the two thigh parts together.
-4. Do not lock thigh with permanent goupilles if you want it demountable.
+3. Install and route the thigh sub-cable before final closing (`hardware/electronics/cabling/README.md`).
+4. Once position is correct, screw the two thigh parts together.
+5. Do not lock thigh with permanent goupilles if you want it demountable.
 
 ## foot
 
@@ -193,7 +209,7 @@ STL To Print:
 | right_leg/ankle/ujoint_ujoint.stl | 1 |
 
 Assembly steps:
-1. Insert bearings and pins/goupilles.
+1. Insert bearings and pins/goupilles.  -> no bearing here, the u joint is put inside bearing placed in the tibias
 2. Keep one ankle interface slightly loose but still movable.
 3. Assemble ujoint parts and screw.
 
@@ -257,8 +273,9 @@ Assembly steps:
 1. Install M3 inserts first (`4` per shin).
 2. Insert bearings and pins/goupilles.
 3. Mandatory: place the knee mechanism inside before final shin closure.
-4. Preferable: place ankle module now (recommended, not mandatory).
-5. Close and screw shin structure, then verify internal parts still move.
+4. Install and route the shin sub-cable before closure (`hardware/electronics/cabling/README.md`).
+5. Preferable: place ankle module now (recommended, not mandatory).
+6. Close and screw shin structure, then verify internal parts still move.
 
 ## ankle_mechanism
 
@@ -288,6 +305,6 @@ STL To Print:
 | right_leg/ankle_mechanism/tibias_actuation_ankle_22.stl | 1 |
 
 Assembly steps:
-1. Insert bearings/spacers and pins/goupilles.
+1. Insert bearings/spacers and pins/goupilles.-> no bearing here, but spherical joint need ot be put on the rod (2 per rod , 8 in total ). please add thisreference in the bom and in other relevant file : spherical joint 27628-01-05 norlem reference 
 2. Assemble rods and ankle actuation parts, then screw.
 3. Verify mechanism moves freely through its range.

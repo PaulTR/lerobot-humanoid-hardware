@@ -19,7 +19,7 @@ torso,stl_print,torso/torso_torso23.stl,stl,1,1
 torso,stl_print,torso/torso_torso33.stl,stl,1,1
 torso,stl_print,torso/torso_uper_torso_22.stl,stl,1,1
 torso,stl_print,torso/torso_upper_torso_12.stl,stl,1,1
-hipx,fastener_screw,M3 screw,M3 x ? cyl head,3,6
+hipx,fastener_screw,M3 screw,M3 x 8 cyl head,3,6
 hipx,fastener_screw,M4 screw,M4 x 40 cyl head,6,12
 hipx,fastener_screw,M4 screw,M4 x 40-50 cyl head,9,18
 hipx,fastener_screw,M4 screw,M4 x 8 cyl head,8,16

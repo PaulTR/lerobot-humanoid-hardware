@@ -14,10 +14,10 @@ Current repo scope:
 CAD organization for this repo:
 - `biped_platform/left_leg/`
 - `biped_platform/right_leg/`
-- `biped_platform/torso_subassembly/`
+- `biped_platform/torso/`
 
 Export policy:
-1. Export `STEP` for neutral CAD exchange.
+1. Keep Onshape as source of truth.
 2. Export `STL` for manufacturing where needed.
 3. Include date/revision in exported filenames.
 4. Update BOM and docs in the same commit.

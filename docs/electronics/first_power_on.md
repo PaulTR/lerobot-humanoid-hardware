@@ -18,7 +18,7 @@
 
 1. Execute tiny motion commands around neutral position.
 2. Confirm software limits are enforced.
-3. Log offsets and update calibration YAML.
+3. Log observed offsets and runtime notes for later integration in `lerobot_humanoid_runtime`.
 
 Stop criteria:
 - unexpected heating, smell, noise, or oscillation

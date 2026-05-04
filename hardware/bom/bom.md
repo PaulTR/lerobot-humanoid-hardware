@@ -44,10 +44,12 @@
 
 | category | name | specification | qty_subassembly | qty_robot |
 |---|---|---|---:|---:|
-| fastener_screw | M3 screw | M3 x ? cyl head | 3 | 6 |
+| fastener_screw | M3 screw | M3 x 8 cyl head | 3 | 6 |
 | fastener_screw | M4 screw | M4 x 40 cyl head | 6 | 12 |
 | fastener_screw | M4 screw | M4 x 40-50 cyl head | 9 | 18 |
 | fastener_screw | M4 screw | M4 x 8 cyl head | 8 | 16 |
+
+> Comment: the `hipx` M3 screw line is optional and can be removed without issue.
 
 ### stl_to_print_left_leg
 | name | quantity |
