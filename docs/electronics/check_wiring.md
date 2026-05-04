@@ -21,6 +21,6 @@ Run this before first power-on.
 
 ## 3. Pre-power checklist
 
-- Current limit configured on bench supply.
+- Bench supply current limit set to `2 A` for first logic-only bring-up.
 - Emergency power cutoff reachable.
 - Motor power path still disconnected for logic-only test.

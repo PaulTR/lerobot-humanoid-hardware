@@ -17,7 +17,7 @@ The split by `shin` / `thigh` / `hip` is intentional to simplify debugging and r
 
 ## Thigh sub-cable
 
-![Thigh sub-cable](tigh_cable.drawio.svg)
+![Thigh sub-cable](thigh_cable.drawio.svg)
 
 ## Hip pass-through sub-cable
 

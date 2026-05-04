@@ -90,7 +90,7 @@ Assumptions:
 | torso | fastener_screw | M5 screw | M5 x 10 cyl head | 5 | 0.20 | 1.00 |
 | hipx | fastener_screw | M3 screw | M3 x 8 cyl head | 6 | 0.10 | 0.60 |
 | hipx | fastener_screw | M4 screw | M4 x 40 cyl head | 12 | 0.17 | 2.04 |
-| hipx | fastener_screw | M4 screw | M4 x 40-50 cyl head | 18 | 0.20 | 3.60 |
+| hipx | fastener_screw | M4 screw | M4 x 45 cyl head | 18 | 0.20 | 3.60 |
 | hipx | fastener_screw | M4 screw | M4 x 8 cyl head | 16 | 0.10 | 1.60 |
 | hipz | motor | RobStride O2 | actuator | 2 | 145.00 | 290.00 |
 | hipz | bearing | Bearing | 35x72x17 | 4 | 12.00 | 48.00 |
@@ -104,21 +104,22 @@ Assumptions:
 | thigh | fastener_screw | M4 screw | M4 x 23.5 cyl head | 8 | 0.16 | 1.28 |
 | thigh | fastener_screw | M4 screw | M4 x 8 cyl head | 20 | 0.10 | 2.00 |
 | knee_mechanism | bearing | Bearing | 15x21x4 | 4 | 3.00 | 12.00 |
-| knee_mechanism | fastener_screw | M3 screw | M3 x 10-15 cyl head | 6 | 0.11 | 0.66 |
+| knee_mechanism | fastener_screw | M3 screw | M3 x 12.5 cyl head | 6 | 0.11 | 0.66 |
 | knee_mechanism | fastener_screw | M4 screw | M4 x 16 cyl head | 16 | 0.12 | 1.92 |
 | shin | motor | RobStride O5 | actuator | 4 | 110.00 | 440.00 |
 | shin | bearing | Bearing | 15x21x4 | 8 | 3.00 | 24.00 |
-| shin | fastener_screw | M2.5 screw | M2.5 x 6-10 cyl head | 6 | 0.10 | 0.60 |
-| shin | fastener_screw | M3 screw | M3 x 15-20 cyl head | 8 | 0.12 | 0.96 |
-| shin | fastener_screw | M3 screw | M3 x 8-12 cyl head | 48 | 0.10 | 4.80 |
+| shin | fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 6 | 0.10 | 0.60 |
+| shin | fastener_screw | M3 screw | M3 x 17.5 cyl head | 8 | 0.12 | 0.96 |
+| shin | fastener_screw | M3 screw | M3 x 10 cyl head | 48 | 0.10 | 4.80 |
 | shin | fastener_screw | M4 screw | M4 x 18 cyl head | 32 | 0.14 | 4.48 |
-| shin | fastener_screw | M4 screw | M4 x 8-12 cyl head | 18 | 0.11 | 1.98 |
+| shin | fastener_screw | M4 screw | M4 x 10 cyl head | 18 | 0.11 | 1.98 |
 | shin | fastener_nut | Nut M4 | M4 nut | 6 | 0.08 | 0.48 |
 | shin | fastener_insert | Heat-set insert M3 | brass threaded insert M3 | 8 | 0.10 | 0.80 |
 | ankle_mechanism | fastener_screw | M5 screw | M5 x 15 cyl head | 8 | 0.24 | 1.92 |
-| ankle | fastener_screw | M2.5 screw | M2.5 x 6-10 cyl head | 12 | 0.10 | 1.20 |
+| ankle_mechanism | joint_spherical | Spherical joint 27628-01-05 | Norelem | 8 | 3.00 | 24.00 |
+| ankle | fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 12 | 0.10 | 1.20 |
 | foot | bearing | Bearing | 5x16x5 | 4 | 2.14 | 8.56 |
-| foot | fastener_screw | M2.5 screw | M2.5 x 6-10 cyl head | 6 | 0.10 | 0.60 |
+| foot | fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 6 | 0.10 | 0.60 |
 | foot | fastener_nut | Nut M4 | M4 nut | 6 | 0.08 | 0.48 |
 | assembly_pins | fastener_pin | Pin d3mm | d3 pin (goupille) | 8 | 0.45 | 3.60 |
 | assembly_pins | fastener_pin | Pin d4mm | d4 pin (goupille) | 18 | 0.55 | 9.90 |
@@ -128,7 +129,7 @@ Assumptions:
 | Cost block | Estimate (USD) |
 |---|---:|
 | ankle subtotal | 1.20 |
-| ankle_mechanism subtotal | 1.92 |
+| ankle_mechanism subtotal | 25.92 |
 | assembly_pins subtotal | 13.50 |
 | foot subtotal | 9.64 |
 | hipx subtotal | 7.84 |
@@ -138,9 +139,9 @@ Assumptions:
 | thigh subtotal | 919.26 |
 | tools subtotal | 3.00 |
 | torso subtotal | 554.92 |
-| BOM-to-buy subtotal (without filament) | 2345.96 |
+| BOM-to-buy subtotal (without filament) | 2369.96 |
 | PLA+ subtotal (~3.5 kg) | 56.00 |
-| **Estimated total** | **2401.96** |
+| **Estimated total** | **2425.96** |
 
 Price anchors used for key components:
 - RobStride motor market listing (O0/O2/O3/O5): https://aifitlab.com/collections/robstride-motor

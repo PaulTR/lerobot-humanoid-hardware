@@ -40,7 +40,7 @@ This wizard can:
 - detect motor protocol and ID
 - switch to MIT protocol with reboot checkpoints
 - assign final motor ID from model ID map
-- run motor motion check (`0 deg -> 90 deg for 1 s -> 0 deg`)
+- run motor motion check (`0 deg -> 90 deg for 1 s -> 0 deg -> disable`)
 
 ## 6. Before first power-on
 

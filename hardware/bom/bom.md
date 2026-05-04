@@ -46,7 +46,7 @@
 |---|---|---|---:|---:|
 | fastener_screw | M3 screw | M3 x 8 cyl head | 3 | 6 |
 | fastener_screw | M4 screw | M4 x 40 cyl head | 6 | 12 |
-| fastener_screw | M4 screw | M4 x 40-50 cyl head | 9 | 18 |
+| fastener_screw | M4 screw | M4 x 45 cyl head | 9 | 18 |
 | fastener_screw | M4 screw | M4 x 8 cyl head | 8 | 16 |
 
 > Comment: the `hipx` M3 screw line is optional and can be removed without issue.
@@ -113,7 +113,7 @@
 | category | name | specification | qty_subassembly | qty_robot |
 |---|---|---|---:|---:|
 | bearing | Bearing | 15x21x4 | 2 | 4 |
-| fastener_screw | M3 screw | M3 x 10-15 cyl head | 3 | 6 |
+| fastener_screw | M3 screw | M3 x 12.5 cyl head | 3 | 6 |
 | fastener_screw | M4 screw | M4 x 16 cyl head | 8 | 16 |
 
 ### stl_to_print_left_leg
@@ -136,11 +136,11 @@
 |---|---|---|---:|---:|
 | motor | RobStride O5 | actuator | 2 | 4 |
 | bearing | Bearing | 15x21x4 | 4 | 8 |
-| fastener_screw | M2.5 screw | M2.5 x 6-10 cyl head | 3 | 6 |
-| fastener_screw | M3 screw | M3 x 15-20 cyl head | 4 | 8 |
-| fastener_screw | M3 screw | M3 x 8-12 cyl head | 24 | 48 |
+| fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 3 | 6 |
+| fastener_screw | M3 screw | M3 x 17.5 cyl head | 4 | 8 |
+| fastener_screw | M3 screw | M3 x 10 cyl head | 24 | 48 |
 | fastener_screw | M4 screw | M4 x 18 cyl head | 16 | 32 |
-| fastener_screw | M4 screw | M4 x 8-12 cyl head | 9 | 18 |
+| fastener_screw | M4 screw | M4 x 10 cyl head | 9 | 18 |
 | fastener_nut | Nut M4 | M4 nut | 3 | 6 |
 | fastener_insert | Heat-set insert M3 | brass threaded insert M3 | 4 | 8 |
 
@@ -169,6 +169,7 @@
 | category | name | specification | qty_subassembly | qty_robot |
 |---|---|---|---:|---:|
 | fastener_screw | M5 screw | M5 x 15 cyl head | 4 | 8 |
+| joint_spherical | Spherical joint 27628-01-05 | Norelem | 4 | 8 |
 
 ### stl_to_print_left_leg
 | name | quantity |
@@ -198,7 +199,7 @@
 
 | category | name | specification | qty_subassembly | qty_robot |
 |---|---|---|---:|---:|
-| fastener_screw | M2.5 screw | M2.5 x 6-10 cyl head | 6 | 12 |
+| fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 6 | 12 |
 
 ### stl_to_print_left_leg
 | name | quantity |
@@ -223,7 +224,7 @@
 | category | name | specification | qty_subassembly | qty_robot |
 |---|---|---|---:|---:|
 | bearing | Bearing | 5x16x5 | 2 | 4 |
-| fastener_screw | M2.5 screw | M2.5 x 6-10 cyl head | 3 | 6 |
+| fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 3 | 6 |
 | fastener_nut | Nut M4 | M4 nut | 3 | 6 |
 
 ### stl_to_print_left_leg

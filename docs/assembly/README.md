@@ -9,6 +9,7 @@ Inputs used for assembly writing:
 - Draft assembly component guide: `docs/assembly/assembly_guide.md`
 - Motor commissioning workflow: `docs/electronics/motor_commissioning.md`
 - Printing list: `docs/manufacturing/printing_guide.md`
+- Assembly photos: `docs/assembly/photos/`
 
 Recommended structure per assembly doc:
 - prerequisites (printed parts, hardware, tools)

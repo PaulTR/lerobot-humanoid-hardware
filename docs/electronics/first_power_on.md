@@ -3,9 +3,11 @@
 ## Phase 1: logic power only
 
 1. Power controller logic rails only.
-2. Confirm expected idle current.
-3. Confirm communication with all controller nodes.
-4. Verify watchdog/heartbeat behavior.
+2. Set bench supply current limit to `2 A` for this first test phase (no motion capability expected).
+3. Confirm expected idle current is around `1 A` maximum.
+4. If current rises above `2 A`, stop immediately and re-check wiring before continuing.
+5. Confirm communication with all controller nodes.
+6. Verify watchdog/heartbeat behavior.
 
 ## Phase 2: actuator power with safety limits
 

@@ -14,6 +14,7 @@ Common assembly rules:
 - Place motor goupille/pin during the same phase as bearing insertion.
 - Exception: in `knee_mechanism` and `ankle`, one interface should stay slightly loose but still movable.
 - For subassembly goupilles: place them during assembly except on `thigh` (keep thigh demountable).
+- Motor orientation is critical: follow the Onshape assembly orientation relative to each motor connector, otherwise cable length can become insufficient.
 - Default thread strategy is direct screw in plastic; use around `5 Nm` for non-structural plastic threads.
 - For motor threaded holes and structural insert zones, use higher torque appropriate to the thread/material.
 - Some fits are intentionally tight; if required, gently ream/drill with a metal bit at low speed.
@@ -42,6 +43,17 @@ Spacer coverage check:
 - Spacers are documented via STL lists in each relevant subassembly section.
 - Spacer STL subassemblies: `shin`, `ankle_mechanism`, `ankle`, `foot`.
 - Non-spacer STL subassemblies: `torso`, `hipx`, `hipz`, `thigh`, `knee_mechanism`.
+
+Mounted robot photo references (explicit names):
+- `docs/assembly/photos/leg_full_view.jpg`
+- `docs/assembly/photos/torso_detail.jpg`
+- `docs/assembly/photos/hipy_detail.jpg`
+- `docs/assembly/photos/hipz_detail.jpg`
+- `docs/assembly/photos/thigh_detail.jpg`
+- `docs/assembly/photos/knee_detail.jpg`
+- `docs/assembly/photos/knee_mechanism_view_1.jpg`
+- `docs/assembly/photos/knee_mechanism_view_2.jpg`
+- `docs/assembly/photos/knee_mechanism_view_3.jpg`
 
 ## torso
 
@@ -87,7 +99,7 @@ Components:
 |---|---|---|---:|---:|
 | fastener_screw | M3 screw | M3 x 8 cyl head | 3 | 6 |
 | fastener_screw | M4 screw | M4 x 40 cyl head | 6 | 12 |
-| fastener_screw | M4 screw | M4 x 40-50 cyl head | 9 | 18 |
+| fastener_screw | M4 screw | M4 x 45 cyl head | 9 | 18 |
 | fastener_screw | M4 screw | M4 x 8 cyl head | 8 | 16 |
 
 > Comment: the `hipx` M3 screw line is optional and can be removed without issue.
@@ -99,8 +111,8 @@ STL To Print:
 | right_leg/hipx/hipx_2_hipxy.stl | 1 |
 
 Assembly steps:
-1. Place the axis in the previous subassembly.
-2. Align hipx parts and screw the full assembly.
+1. Start by inserting the hip axis and fixing it to the motor.
+2. Align hipx parts on the previous subassembly and screw the full assembly.
 3. Verify hipx motion is free with no hard point.
 
 ## hipz
@@ -123,8 +135,8 @@ STL To Print:
 
 Assembly steps:
 1. Insert hipz bearings.
-2. Place and screw the motor.
-3. Insert the axis in the previous assembly, then screw it.
+2. Start by inserting the axis and fixing it to the motor (`hipz` naming in this repo corresponds to the hipy joint).
+3. Place and screw the motor.
 4. Route the hip pass-through sub-cable through hipz according to `hardware/electronics/cabling/README.md`.
 5. Assemble the bearing to the hipz assembly and verify free motion.
 
@@ -152,10 +164,10 @@ STL To Print:
 | right_leg/thigh/femur_v2_hat_femur_2.stl | 1 |
 
 Assembly steps:
-1. Prepare both thigh parts but keep them separate initially.
-2. Do the shape assembly of thigh around the previous joint first.
+1. Insert the exterior thigh shell (`femur_22`) into the hipy joint side first (`hipz` naming in this repo).
+2. Fix `femur_12` to the hipy/hipz side.
 3. Install and route the thigh sub-cable before final closing (`hardware/electronics/cabling/README.md`).
-4. Once position is correct, screw the two thigh parts together.
+4. Screw `femur_12` and `femur_22` together once joint alignment is correct.
 5. Do not lock thigh with permanent goupilles if you want it demountable.
 
 ## foot
@@ -164,7 +176,7 @@ Components:
 | Category | Name | Specification | Qty / Subassembly | Qty / Robot |
 |---|---|---|---:|---:|
 | bearing | Bearing | 5x16x5 | 2 | 4 |
-| fastener_screw | M2.5 screw | M2.5 x 6-10 cyl head | 3 | 6 |
+| fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 3 | 6 |
 | fastener_nut | Nut M4 | M4 nut | 3 | 6 |
 
 STL To Print:
@@ -192,7 +204,7 @@ Assembly steps:
 Components:
 | Category | Name | Specification | Qty / Subassembly | Qty / Robot |
 |---|---|---|---:|---:|
-| fastener_screw | M2.5 screw | M2.5 x 6-10 cyl head | 6 | 12 |
+| fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 6 | 12 |
 
 STL To Print:
 | Name | Quantity |
@@ -209,9 +221,10 @@ STL To Print:
 | right_leg/ankle/ujoint_ujoint.stl | 1 |
 
 Assembly steps:
-1. Insert bearings and pins/goupilles.  -> no bearing here, the u joint is put inside bearing placed in the tibias
-2. Keep one ankle interface slightly loose but still movable.
-3. Assemble ujoint parts and screw.
+1. Assemble U-joint parts and install pins/goupilles.
+2. Insert the assembled U-joint into shin bearings (bearings are installed in the shin subassembly, not in ankle STL parts).
+3. Keep one ankle interface slightly loose but still movable.
+4. Verify free ankle motion after tightening.
 
 ## knee_mechanism
 
@@ -219,7 +232,7 @@ Components:
 | Category | Name | Specification | Qty / Subassembly | Qty / Robot |
 |---|---|---|---:|---:|
 | bearing | Bearing | 15x21x4 | 2 | 4 |
-| fastener_screw | M3 screw | M3 x 10-15 cyl head | 3 | 6 |
+| fastener_screw | M3 screw | M3 x 12.5 cyl head | 3 | 6 |
 | fastener_screw | M4 screw | M4 x 16 cyl head | 8 | 16 |
 
 STL To Print:
@@ -233,10 +246,11 @@ STL To Print:
 | right_leg/knee_mechanism/femur_v2_knee_rod22_1.stl | 1 |
 
 Assembly steps:
-1. Insert bearings and corresponding goupille/pin.
+1. Pre-assemble the knee mechanism with its motor and rods.
 2. Keep the knee interface slightly loose but still movable.
-3. Assemble rods/actuation parts and screw them.
-4. Check that knee motion is smooth and not binding.
+3. Integrate this knee mechanism inside the shin assembly first.
+4. Fix the knee motor to the thigh at the end of leg integration.
+5. Check that knee motion is smooth and not binding.
 
 ## shin
 
@@ -245,11 +259,11 @@ Components:
 |---|---|---|---:|---:|
 | motor | RobStride O5 | actuator | 2 | 4 |
 | bearing | Bearing | 15x21x4 | 4 | 8 |
-| fastener_screw | M2.5 screw | M2.5 x 6-10 cyl head | 3 | 6 |
-| fastener_screw | M3 screw | M3 x 15-20 cyl head | 4 | 8 |
-| fastener_screw | M3 screw | M3 x 8-12 cyl head | 24 | 48 |
+| fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 3 | 6 |
+| fastener_screw | M3 screw | M3 x 17.5 cyl head | 4 | 8 |
+| fastener_screw | M3 screw | M3 x 10 cyl head | 24 | 48 |
 | fastener_screw | M4 screw | M4 x 18 cyl head | 16 | 32 |
-| fastener_screw | M4 screw | M4 x 8-12 cyl head | 9 | 18 |
+| fastener_screw | M4 screw | M4 x 10 cyl head | 9 | 18 |
 | fastener_nut | Nut M4 | M4 nut | 3 | 6 |
 | fastener_insert | Heat-set insert M3 | brass threaded insert M3 | 4 | 8 |
 
@@ -272,10 +286,11 @@ STL To Print:
 Assembly steps:
 1. Install M3 inserts first (`4` per shin).
 2. Insert bearings and pins/goupilles.
-3. Mandatory: place the knee mechanism inside before final shin closure.
-4. Install and route the shin sub-cable before closure (`hardware/electronics/cabling/README.md`).
-5. Preferable: place ankle module now (recommended, not mandatory).
-6. Close and screw shin structure, then verify internal parts still move.
+3. Mandatory: place the full knee mechanism (including motor) inside before final shin closure.
+4. For re-assembly in tight fit conditions: gently shift the bearing with light hammer taps to create spacer clearance, insert spacer, then re-seat bearing.
+5. Install and route the shin sub-cable before closure (`hardware/electronics/cabling/README.md`).
+6. Preferable: place ankle module now (recommended, not mandatory).
+7. Close and screw shin structure, then verify internal parts still move.
 
 ## ankle_mechanism
 
@@ -283,6 +298,7 @@ Components:
 | Category | Name | Specification | Qty / Subassembly | Qty / Robot |
 |---|---|---|---:|---:|
 | fastener_screw | M5 screw | M5 x 15 cyl head | 4 | 8 |
+| joint_spherical | Spherical joint 27628-01-05 | Norelem | 4 | 8 |
 
 STL To Print:
 | Name | Quantity |
@@ -305,6 +321,6 @@ STL To Print:
 | right_leg/ankle_mechanism/tibias_actuation_ankle_22.stl | 1 |
 
 Assembly steps:
-1. Insert bearings/spacers and pins/goupilles.-> no bearing here, but spherical joint need ot be put on the rod (2 per rod , 8 in total ). please add thisreference in the bom and in other relevant file : spherical joint 27628-01-05 norlem reference 
-2. Assemble rods and ankle actuation parts, then screw.
+1. Install spherical joints on rods (`2` per rod, `4` per leg, `8` per robot).
+2. Assemble rods, spacers, and ankle actuation parts, then screw.
 3. Verify mechanism moves freely through its range.

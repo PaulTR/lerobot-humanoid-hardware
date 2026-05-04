@@ -33,6 +33,7 @@ DEFAULT_PROTOCOL_ORDER = ("canopen", "private", "mit")
 
 CAN_CMD_CLEAR_FAULT = 0xFB
 CAN_CMD_ENABLE = 0xFC
+CAN_CMD_DISABLE = 0xFD
 CAN_CMD_SET_ZERO = 0xFE
 
 MOTOR_MODEL_ID_MAP: dict[str, tuple[int, ...]] = {
@@ -252,6 +253,18 @@ def enable_mit(bus: Any, motor_id: int, *, timeout_s: float = 0.2) -> bool:
     return reply is not None
 
 
+def disable_mit(bus: Any, motor_id: int, *, timeout_s: float = 0.2) -> bool:
+    data = [0xFF] * 7 + [CAN_CMD_DISABLE]
+    msg = can.Message(arbitration_id=int(motor_id), data=data, is_extended_id=False)
+    bus.send(msg)
+    reply = _wait_reply(
+        bus,
+        timeout_s=timeout_s,
+        predicate=lambda m: _matches_mit_reply(m, motor_id=int(motor_id)),
+    )
+    return reply is not None
+
+
 def _float_to_uint(x: float, x_min: float, x_max: float, bits: int) -> int:
     x_clamped = max(float(x_min), min(float(x_max), float(x)))
     span = float(x_max - x_min)
@@ -303,7 +316,7 @@ def mit_position_command(
 
 
 def _run_motion_test(bus: Any, motor_id: int, *, duration_s: float = 1.0) -> bool:
-    print("Running motion test: set zero -> enable -> 90 deg (1s) -> 0 deg")
+    print("Running motion test: set zero -> enable -> 90 deg (1s) -> 0 deg -> disable")
 
     if not set_zero_mit(bus, motor_id):
         print("Motion test failed: set zero command not acknowledged.")
@@ -328,6 +341,11 @@ def _run_motion_test(bus: Any, motor_id: int, *, duration_s: float = 1.0) -> boo
         if mit_position_command(bus, motor_id, 0.0):
             ok_0 = True
         time.sleep(0.02)
+
+    disable_ok = disable_mit(bus, motor_id)
+    if not disable_ok:
+        print("Motion test failed: disable command not acknowledged.")
+        return False
 
     if not (ok_90 and ok_0):
         print("Motion test warning: one or more MIT position commands were not acknowledged.")

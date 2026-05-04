@@ -22,7 +22,7 @@ python hardware/config/commission_motor.py wizard --channel can0 --motor-model o
 2. Switches motor to `MIT` protocol (with required reboot checkpoints).
 3. Applies final motor ID according to motor model mapping.
 4. Reboots and verifies final ID and protocol (`MIT`).
-5. Runs motion check: set zero, enable, move to `90 deg` for `1 s`, then back to `0 deg`.
+5. Runs motion check: set zero, enable, move to `90 deg` for `1 s`, then back to `0 deg`, then disable motor.
 
 ## Final ID Map
 
