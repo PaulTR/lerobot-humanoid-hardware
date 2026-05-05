@@ -152,6 +152,7 @@ Components:
 | fastener_screw | M4 screw | M4 x 10 cyl head | 4 | 8 |
 | fastener_screw | M4 screw | M4 x 23.5 cyl head | 4 | 8 |
 | fastener_screw | M4 screw | M4 x 8 cyl head | 10 | 20 |
+| fastener_axis | Shoulder screw 07534-05X40 | ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9 | 1 | 2 |
 
 STL To Print:
 | Name | Quantity |
@@ -205,6 +206,7 @@ Components:
 | Category | Name | Specification | Qty / Subassembly | Qty / Robot |
 |---|---|---|---:|---:|
 | fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 6 | 12 |
+| fastener_axis | Shoulder screw 07534-05X40 | ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9 | 1 | 2 |
 
 STL To Print:
 | Name | Quantity |
@@ -299,6 +301,7 @@ Components:
 |---|---|---|---:|---:|
 | fastener_screw | M5 screw | M5 x 15 cyl head | 4 | 8 |
 | joint_spherical | Spherical joint 27628-01-05 | Norelem | 4 | 8 |
+| fastener_axis | Shoulder screw 07534-05X20 | ISO7379, D1=5, L1=20, B=8, M4, steel 12.9 | 4 | 8 |
 
 STL To Print:
 | Name | Quantity |

@@ -14,4 +14,4 @@ python hardware/config/commission_motor.py wizard --channel can0 --motor-model o
 ```
 
 Scope boundary:
-- robot model and runtime control are maintained in `../lerobot_humanoid_runtime`
+- robot model and runtime control are maintained in https://github.com/Virgileboat/lerobot-humanoid-runtime

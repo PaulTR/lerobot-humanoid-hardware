@@ -14,7 +14,7 @@ Not yet tracked in this repo iteration:
 
 - CAD source of truth: Onshape document (`fb645318a27646d1d8840be6`)
 - Build source of truth: this repository
-- Runtime control/model source: `../lerobot_humanoid_runtime`
+- Runtime control/model source: https://github.com/Virgileboat/lerobot-humanoid-runtime
 
 ## CAD split
 
@@ -29,5 +29,5 @@ This repository stores STL exports under:
 For every hardware change:
 1. Link it to a CAD revision/context in commit message or PR notes.
 2. Update BOM (`hardware/bom/bom.csv`) if parts change.
-3. If geometry/kinematics change, update runtime model/control artifacts in `../lerobot_humanoid_runtime`.
+3. If geometry/kinematics change, update runtime model/control artifacts in https://github.com/Virgileboat/lerobot-humanoid-runtime.
 4. Update assembly/manufacturing docs if process changes.

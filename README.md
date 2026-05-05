@@ -46,7 +46,7 @@ This mirrors the assembly view and makes part export placement explicit.
 ## Runtime integration
 
 Runtime repository (robot model and control runtime) lives in:
-- `../lerobot_humanoid_runtime`
+- https://github.com/Virgileboat/lerobot-humanoid-runtime
 
 Motor commissioning script in this repo is self-contained and does **not** depend on `robstride_toolkit`.
 
@@ -81,6 +81,67 @@ If you are blocked on build, printing, electronics, or assembly details:
 2. Export manufacturing/build assets to this repository.
 3. Update BOM/config/docs in the same commit.
 4. Keep all biped-platform changes traceable to a CAD revision.
+
+## BOM Split (Robot Qty)
+
+### STL BOM
+
+| Subassembly | STL files to print |
+|---|---:|
+| torso | 7 |
+| hipx | 2 |
+| hipz | 4 |
+| thigh | 6 |
+| knee_mechanism | 6 |
+| shin | 12 |
+| ankle_mechanism | 16 |
+| ankle | 10 |
+| foot | 12 |
+| **Total** | **75** |
+
+Detailed STL names and quantities:
+- [Printing guide](docs/manufacturing/printing_guide.md)
+- [BOM total (clickable STL rows)](hardware/bom/bom.md)
+- [BOM CSV (`category=stl_print`)](hardware/bom/bom.csv)
+
+### Bearing/Revolute BOM
+
+| Name | Specification | Qty (robot) |
+|---|---|---:|
+| Bearing | 35x72x17 | 4 |
+| Bearing | 15x21x4 | 14 |
+| Bearing | 5x16x5 | 8 |
+| Spherical joint 27628-01-05 | Norelem | 8 |
+
+### Axis BOM
+
+| Name | Specification | Qty (robot) | Usage |
+|---|---|---:|---|
+| Shoulder screw 07534-05X40 | ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9 | 4 | thigh (2) + ankle (2) |
+| Shoulder screw 07534-05X20 | ISO7379, D1=5, L1=20, B=8, M4, steel 12.9 | 8 | ankle_mechanism (8) |
+
+### Screw BOM
+
+| Name | Specification | Qty (robot) |
+|---|---|---:|
+| M2 screw | M2 x 5 cyl head | 4 |
+| M2.5 screw | M2.5 x 20 cyl head | 9 |
+| M2.5 screw | M2.5 x 6 cyl head | 6 |
+| M2.5 screw | M2.5 x 8 cyl head | 24 |
+| M3 screw | M3 x 8 cyl head | 18 |
+| M3 screw | M3 x 10 cyl head | 48 |
+| M3 screw | M3 x 12.5 cyl head | 6 |
+| M3 screw | M3 x 17.5 cyl head | 8 |
+| M4 screw | M4 x 8 cyl head | 36 |
+| M4 screw | M4 x 10 cyl head | 42 |
+| M4 screw | M4 x 16 cyl head | 16 |
+| M4 screw | M4 x 18 cyl head | 32 |
+| M4 screw | M4 x 20 cyl head | 32 |
+| M4 screw | M4 x 23.5 cyl head | 8 |
+| M4 screw | M4 x 40 cyl head | 12 |
+| M4 screw | M4 x 45 cyl head | 18 |
+| M5 screw | M5 x 10 cyl head | 5 |
+| M5 screw | M5 x 15 cyl head | 8 |
 
 ## Cost estimate (Biped Platform, April 30 2026)
 
@@ -125,6 +186,7 @@ Assumptions:
 | thigh | fastener_screw | M4 screw | M4 x 10 cyl head | 8 | 0.11 | 0.88 |
 | thigh | fastener_screw | M4 screw | M4 x 23.5 cyl head | 8 | 0.16 | 1.28 |
 | thigh | fastener_screw | M4 screw | M4 x 8 cyl head | 20 | 0.10 | 2.00 |
+| thigh | fastener_axis | Shoulder screw 07534-05X40 | ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9 | 2 | 7.00 | 14.00 |
 | knee_mechanism | bearing | Bearing | 15x21x4 | 4 | 3.00 | 12.00 |
 | knee_mechanism | fastener_screw | M3 screw | M3 x 12.5 cyl head | 6 | 0.11 | 0.66 |
 | knee_mechanism | fastener_screw | M4 screw | M4 x 16 cyl head | 16 | 0.12 | 1.92 |
@@ -139,7 +201,9 @@ Assumptions:
 | shin | fastener_insert | Heat-set insert M3 | brass threaded insert M3 | 8 | 0.10 | 0.80 |
 | ankle_mechanism | fastener_screw | M5 screw | M5 x 15 cyl head | 8 | 0.24 | 1.92 |
 | ankle_mechanism | joint_spherical | Spherical joint 27628-01-05 | Norelem | 8 | 3.00 | 24.00 |
+| ankle_mechanism | fastener_axis | Shoulder screw 07534-05X20 | ISO7379, D1=5, L1=20, B=8, M4, steel 12.9 | 8 | 5.43 | 43.44 |
 | ankle | fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 12 | 0.10 | 1.20 |
+| ankle | fastener_axis | Shoulder screw 07534-05X40 | ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9 | 2 | 7.00 | 14.00 |
 | foot | bearing | Bearing | 5x16x5 | 4 | 2.14 | 8.56 |
 | foot | fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 6 | 0.10 | 0.60 |
 | foot | fastener_nut | Nut M4 | M4 nut | 6 | 0.08 | 0.48 |
@@ -150,20 +214,20 @@ Assumptions:
 
 | Cost block | Estimate (USD) |
 |---|---:|
-| ankle subtotal | 1.20 |
-| ankle_mechanism subtotal | 25.92 |
+| ankle subtotal | 15.20 |
+| ankle_mechanism subtotal | 69.36 |
 | assembly_pins subtotal | 13.50 |
 | foot subtotal | 9.64 |
 | hipx subtotal | 7.84 |
 | hipz subtotal | 342.00 |
 | knee_mechanism subtotal | 14.58 |
 | shin subtotal | 478.10 |
-| thigh subtotal | 919.26 |
+| thigh subtotal | 933.26 |
 | tools subtotal | 3.00 |
 | torso subtotal | 554.92 |
-| BOM-to-buy subtotal (without filament) | 2369.96 |
+| BOM-to-buy subtotal (without filament) | 2441.40 |
 | PLA+ subtotal (~3.5 kg) | 56.00 |
-| **Estimated total** | **2425.96** |
+| **Estimated total** | **2497.40** |
 
 Price anchors used for key components:
 - RobStride motor market listing (O0/O2/O3/O5): https://aifitlab.com/collections/robstride-motor

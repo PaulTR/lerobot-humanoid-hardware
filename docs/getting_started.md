@@ -30,7 +30,7 @@ cd lerobot-humanoid-hardware
 ## 5. Runtime dependency
 
 Full robot runtime and model live at:
-- `../lerobot_humanoid_runtime`
+- https://github.com/Virgileboat/lerobot-humanoid-runtime
 
 `commission_motor.py` in this repo is self-contained and does not require runtime/toolkit imports.
 

@@ -27,6 +27,7 @@ thigh,fastener_screw,M2.5 screw,M2.5 x 6 cyl head,3,6
 thigh,fastener_screw,M4 screw,M4 x 10 cyl head,4,8
 thigh,fastener_screw,M4 screw,M4 x 23.5 cyl head,4,8
 thigh,fastener_screw,M4 screw,M4 x 8 cyl head,10,20
+thigh,fastener_axis,Shoulder screw 07534-05X40,"ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9",1,2
 knee_mechanism,bearing,Bearing,15x21x4,2,4
 knee_mechanism,fastener_screw,M3 screw,M3 x 12.5 cyl head,3,6
 knee_mechanism,fastener_screw,M4 screw,M4 x 16 cyl head,8,16
@@ -41,7 +42,9 @@ shin,fastener_nut,Nut M4,M4 nut,3,6
 shin,fastener_insert,Heat-set insert M3,brass threaded insert M3,4,8
 ankle_mechanism,fastener_screw,M5 screw,M5 x 15 cyl head,4,8
 ankle_mechanism,joint_spherical,Spherical joint 27628-01-05,Norelem,4,8
+ankle_mechanism,fastener_axis,Shoulder screw 07534-05X20,"ISO7379, D1=5, L1=20, B=8, M4, steel 12.9",4,8
 ankle,fastener_screw,M2.5 screw,M2.5 x 8 cyl head,6,12
+ankle,fastener_axis,Shoulder screw 07534-05X40,"ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9",1,2
 foot,bearing,Bearing,5x16x5,2,4
 foot,fastener_screw,M2.5 screw,M2.5 x 8 cyl head,3,6
 foot,fastener_nut,Nut M4,M4 nut,3,6

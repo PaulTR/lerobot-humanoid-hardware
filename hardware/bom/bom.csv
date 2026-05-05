@@ -40,6 +40,7 @@ thigh,fastener_screw,M2.5 screw,M2.5 x 6 cyl head,3,6
 thigh,fastener_screw,M4 screw,M4 x 10 cyl head,4,8
 thigh,fastener_screw,M4 screw,M4 x 23.5 cyl head,4,8
 thigh,fastener_screw,M4 screw,M4 x 8 cyl head,10,20
+thigh,fastener_axis,Shoulder screw 07534-05X40,"ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9",1,2
 thigh,stl_print,left_leg/thigh/femur_v2_femur_12_sym_1.stl,stl,1,1
 thigh,stl_print,left_leg/thigh/femur_v2_femur_22_sym_1.stl,stl,1,1
 thigh,stl_print,left_leg/thigh/femur_v2_hat_femur_2.stl,stl,1,1
@@ -78,6 +79,7 @@ shin,stl_print,right_leg/shin/tibias2_tibias12.stl,stl,1,1
 shin,stl_print,right_leg/shin/tibias2_tibias22.stl,stl,1,1
 ankle_mechanism,fastener_screw,M5 screw,M5 x 15 cyl head,4,8
 ankle_mechanism,joint_spherical,Spherical joint 27628-01-05,Norelem,4,8
+ankle_mechanism,fastener_axis,Shoulder screw 07534-05X20,"ISO7379, D1=5, L1=20, B=8, M4, steel 12.9",4,8
 ankle_mechanism,stl_print,left_leg/ankle_mechanism/bearing_spacer14_5_7_3.stl,stl,1,1
 ankle_mechanism,stl_print,left_leg/ankle_mechanism/bearing_spacer24_5_7_3.stl,stl,1,1
 ankle_mechanism,stl_print,left_leg/ankle_mechanism/bearing_spacer34_5_7_3.stl,stl,1,1
@@ -95,6 +97,7 @@ ankle_mechanism,stl_print,right_leg/ankle_mechanism/tibias2_rod_small.stl,stl,1,
 ankle_mechanism,stl_print,right_leg/ankle_mechanism/tibias_actuation_ankle_12.stl,stl,1,1
 ankle_mechanism,stl_print,right_leg/ankle_mechanism/tibias_actuation_ankle_22.stl,stl,1,1
 ankle,fastener_screw,M2.5 screw,M2.5 x 8 cyl head,6,12
+ankle,fastener_axis,Shoulder screw 07534-05X40,"ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9",1,2
 ankle,stl_print,left_leg/ankle/ujoint_hat_small_12.stl,stl,1,1
 ankle,stl_print,left_leg/ankle/ujoint_hat_small_22.stl,stl,1,1
 ankle,stl_print,left_leg/ankle/ujoint_spacer_12_ujoint.stl,stl,1,1
