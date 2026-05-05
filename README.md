@@ -154,6 +154,7 @@ Assumptions:
 - prices are indicative and vendor-dependent
 - excludes shipping, import duties, and local taxes
 - fastener prices use bulk-piece estimates
+- EUR-priced references converted with `1 EUR = 1.1691 USD` (snapshot on `May 5, 2026`)
 - `hipx` M3 screw line is optional and can be removed without issue
 
 | Subassembly | Category | Name | Specification | Qty (robot) | Unit est. (USD) | Subtotal est. (USD) |
@@ -176,17 +177,17 @@ Assumptions:
 | hipx | fastener_screw | M4 screw | M4 x 45 cyl head | 18 | 0.20 | 3.60 |
 | hipx | fastener_screw | M4 screw | M4 x 8 cyl head | 16 | 0.10 | 1.60 |
 | hipz | motor | RobStride O2 | actuator | 2 | 145.00 | 290.00 |
-| hipz | bearing | Bearing | 35x72x17 | 4 | 12.00 | 48.00 |
+| hipz | bearing | Bearing | 35x72x17 | 4 | 8.27 | 33.08 |
 | hipz | fastener_screw | M4 screw | M4 x 10 cyl head | 16 | 0.11 | 1.76 |
 | hipz | fastener_screw | M4 screw | M4 x 20 cyl head | 16 | 0.14 | 2.24 |
 | thigh | motor | RobStride O3 | actuator | 4 | 225.00 | 900.00 |
 | thigh | bearing | Bearing | 15x21x4 | 2 | 3.00 | 6.00 |
-| thigh | bearing | Bearing | 5x16x5 | 4 | 2.14 | 8.56 |
+| thigh | bearing | Bearing | 5x16x5 | 4 | 1.87 | 7.48 |
 | thigh | fastener_screw | M2.5 screw | M2.5 x 6 cyl head | 6 | 0.09 | 0.54 |
 | thigh | fastener_screw | M4 screw | M4 x 10 cyl head | 8 | 0.11 | 0.88 |
 | thigh | fastener_screw | M4 screw | M4 x 23.5 cyl head | 8 | 0.16 | 1.28 |
 | thigh | fastener_screw | M4 screw | M4 x 8 cyl head | 20 | 0.10 | 2.00 |
-| thigh | fastener_axis | Shoulder screw 07534-05X40 | ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9 | 2 | 7.00 | 14.00 |
+| thigh | fastener_axis | Shoulder screw 07534-05X40 | ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9 | 2 | 8.18 | 16.36 |
 | knee_mechanism | bearing | Bearing | 15x21x4 | 4 | 3.00 | 12.00 |
 | knee_mechanism | fastener_screw | M3 screw | M3 x 12.5 cyl head | 6 | 0.11 | 0.66 |
 | knee_mechanism | fastener_screw | M4 screw | M4 x 16 cyl head | 16 | 0.12 | 1.92 |
@@ -200,11 +201,11 @@ Assumptions:
 | shin | fastener_nut | Nut M4 | M4 nut | 6 | 0.08 | 0.48 |
 | shin | fastener_insert | Heat-set insert M3 | brass threaded insert M3 | 8 | 0.10 | 0.80 |
 | ankle_mechanism | fastener_screw | M5 screw | M5 x 15 cyl head | 8 | 0.24 | 1.92 |
-| ankle_mechanism | joint_spherical | Spherical joint 27628-01-05 | Norelem | 8 | 3.00 | 24.00 |
-| ankle_mechanism | fastener_axis | Shoulder screw 07534-05X20 | ISO7379, D1=5, L1=20, B=8, M4, steel 12.9 | 8 | 5.43 | 43.44 |
+| ankle_mechanism | joint_spherical | Spherical joint 27628-01-05 | Norelem | 8 | 20.93 | 167.44 |
+| ankle_mechanism | fastener_axis | Shoulder screw 07534-05X20 | ISO7379, D1=5, L1=20, B=8, M4, steel 12.9 | 8 | 6.35 | 50.80 |
 | ankle | fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 12 | 0.10 | 1.20 |
-| ankle | fastener_axis | Shoulder screw 07534-05X40 | ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9 | 2 | 7.00 | 14.00 |
-| foot | bearing | Bearing | 5x16x5 | 4 | 2.14 | 8.56 |
+| ankle | fastener_axis | Shoulder screw 07534-05X40 | ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9 | 2 | 8.18 | 16.36 |
+| foot | bearing | Bearing | 5x16x5 | 4 | 1.87 | 7.48 |
 | foot | fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 6 | 0.10 | 0.60 |
 | foot | fastener_nut | Nut M4 | M4 nut | 6 | 0.08 | 0.48 |
 | assembly_pins | fastener_pin | Pin d3mm | d3 pin (goupille) | 8 | 0.45 | 3.60 |
@@ -214,29 +215,29 @@ Assumptions:
 
 | Cost block | Estimate (USD) |
 |---|---:|
-| ankle subtotal | 15.20 |
-| ankle_mechanism subtotal | 69.36 |
+| ankle subtotal | 17.56 |
+| ankle_mechanism subtotal | 220.16 |
 | assembly_pins subtotal | 13.50 |
-| foot subtotal | 9.64 |
+| foot subtotal | 8.56 |
 | hipx subtotal | 7.84 |
-| hipz subtotal | 342.00 |
+| hipz subtotal | 327.08 |
 | knee_mechanism subtotal | 14.58 |
 | shin subtotal | 478.10 |
-| thigh subtotal | 933.26 |
+| thigh subtotal | 934.54 |
 | tools subtotal | 3.00 |
 | torso subtotal | 554.92 |
-| BOM-to-buy subtotal (without filament) | 2441.40 |
+| BOM-to-buy subtotal (without filament) | 2579.84 |
 | PLA+ subtotal (~3.5 kg) | 56.00 |
-| **Estimated total** | **2497.40** |
+| **Estimated total** | **2635.84** |
 
 Price anchors used for key components:
-- RobStride motor market listing (O0/O2/O3/O5): https://aifitlab.com/collections/robstride-motor
-- RobStride O0: https://aifitlab.com/products/robstride-00-motor
-- RobStride O2: https://aifitlab.com/products/robstride-02-motor
-- RobStride O5: https://aifitlab.com/products/robstride-05-motor
+- RobStride official site (motors): https://www.robstride.com/
+- RobStride official product information: https://github.com/RobStride/Product_Information
 - Raspberry Pi 5 (8GB): https://www.sparkfun.com/products/23551
 - IMU BNO085: https://www.ardusimple.com/product/adafruit-9-dof-orientation-imu-fusion-breakout-bno085/
 - SAVVYCANFD adapter: https://www.pibiger-tech.com/product/savvycan-fd-c/
-- Bearing 5x16x5 reference price: https://www.123bearing.com/bearing-housing/deep-groove-bearing/single-row/625
-- Bearing 35x72x17 reference price: https://roulement.net/en-us/products/6207-du-nsk
+- Bearing 5x16x5 reference price (123roulement): https://www.123roulement.com/roulement-palier/roulement-bille/simple-rangee/625-zz
+- Bearing 35x72x17 reference price (123roulement): https://www.123roulement.com/roulement-palier/roulement-bille/simple-rangee/6207
+- Norelem shoulder screw series 07534 (axis refs 07534-05X20 / 07534-05X40): https://www.norelem.fr/fr/Aper%C3%A7u%2Bdu%2Bproduit/Syst%C3%A8me-flexible-de-pi%C3%A8ces-standardis%C3%A9es/07000/%C3%89crous-vis-rondelles-%C3%A9l%C3%A9ments-de-fixation/Vis-rectifi%C3%A9e-%C3%A0-%C3%A9paulement-similaire-ISO-7379/p/agid.27418
+- Norelem rod end series 27628 (spherical joint ref 27628-01-05): https://www.norelem.fr/en/Product-overview/Systems-and-components-for-machine-and-plant-construction/27000/Rod-ends/Rod-ends-with-plain-bearing-internal-thread-DIN-ISO-12240-4/p/agid.5144
 - PLA+ reference price: https://us.elegoo.com/products/elegoo-rapid-pla-plus-filament-1-75mm-colored-1kg
