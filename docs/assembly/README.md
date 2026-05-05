@@ -6,7 +6,7 @@ Inputs used for assembly writing:
 - STL layout: `hardware/cad/stl/biped_platform/`
 - Total BOM (includes STL): `hardware/bom/bom.csv`
 - Buy BOM (no STL): `hardware/bom/bom_buy.csv`
-- Draft assembly component guide: `docs/assembly/assembly_guide.md`
+- Main assembly guide: `docs/assembly/assembly_guide.md`
 - Motor commissioning workflow: `docs/electronics/motor_commissioning.md`
 - Printing list: `docs/manufacturing/printing_guide.md`
 - Assembly photos: `docs/assembly/photos/`
@@ -20,7 +20,6 @@ Recommended structure per assembly doc:
 Current mapping:
 - `docs/assembly/subassembly_map.md`
 
-Planned first guide set:
-- `assembly_guide.md` (component lists per subassembly)
-- `assembly_guide_outline.md` (ordered build plan + required inputs)
-- Detailed step-by-step instructions to be added later
+Guide set:
+- `assembly_guide.md`: ordered build sequence + per-subassembly components + key assembly constraints
+- `assembly_guide_outline.md`: compact sequence reference

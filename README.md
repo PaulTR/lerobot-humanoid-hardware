@@ -53,6 +53,23 @@ Motor commissioning script in this repo is self-contained and does **not** depen
 Main scripts:
 - `hardware/config/commission_motor.py`
 
+## Start Sequence (Human + Agent)
+
+Use this preferred order to start a new build:
+
+1. Order all buy parts from `hardware/bom/bom_buy.csv` first.
+2. Print all required STL parts from `docs/manufacturing/printing_guide.md`.
+3. Commission and check every motor before assembly:
+   - `docs/electronics/motor_commissioning.md`
+   - `python hardware/config/commission_motor.py wizard --channel can0`
+4. Assemble mechanical subassemblies using `docs/assembly/assembly_guide.md`.
+5. Run wiring and first power-on checks:
+   - `docs/electronics/check_wiring.md`
+   - `docs/electronics/first_power_on.md`
+
+Important rule:
+- Do not start mechanical assembly before motor protocol/ID commissioning and motion check are completed.
+
 ## Working model
 
 1. Modify design in Onshape.

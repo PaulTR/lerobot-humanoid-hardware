@@ -1,11 +1,23 @@
-# Printing Guide (Draft)
+# Printing Guide
 
 Generic recommendation:
+- Printer baseline: `Bambu Lab H2D`
+- Material baseline: `PLA+` for all robot printed parts
 - Infill: `30%`
 - Wall count: `4`
 - Layer height: `0.15 mm`
 - Infill pattern: `gyroid`
 - Nozzle: `0.2 mm`
+
+Anti-delamination and orientation rule:
+- For structural parts, orient prints so layer lines do not take the main tensile load.
+- If orientation is ambiguous, check Onshape assembly orientation first, then compare with mounted reference photos in `docs/assembly/photos/`.
+- Orientation reference photos to inspect line direction and final part pose:
+  - `docs/assembly/photos/thigh_detail.jpg`
+  - `docs/assembly/photos/knee_detail.jpg`
+  - `docs/assembly/photos/knee_mechanism_view_1.jpg`
+  - `docs/assembly/photos/knee_mechanism_view_2.jpg`
+  - `docs/assembly/photos/knee_mechanism_view_3.jpg`
 
 
 ## torso

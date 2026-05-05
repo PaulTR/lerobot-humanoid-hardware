@@ -1,4 +1,4 @@
-# Assembly Guide (Draft)
+# Assembly Guide
 
 Assembly order:
 1. Configure all motors (`docs/electronics/motor_commissioning.md`).

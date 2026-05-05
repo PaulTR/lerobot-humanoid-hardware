@@ -8,6 +8,28 @@ Scope:
 - Biped platform hardware only.
 - Upper body is out of scope for this repository iteration.
 
+## Startup Workflow (always propose this first)
+
+When a user asks "how to start" or asks for build sequencing, return this order:
+1. Order all buy parts from `hardware/bom/bom_buy.csv`.
+2. Print STL parts from `docs/manufacturing/printing_guide.md`.
+3. Commission and validate all motors before mechanical assembly (`docs/electronics/motor_commissioning.md`).
+4. Assemble using `docs/assembly/assembly_guide.md`.
+5. Run wiring verification and first power-on procedures (`docs/electronics/check_wiring.md`, `docs/electronics/first_power_on.md`).
+
+Constraint:
+- Never advise starting mechanical assembly before motor commissioning and motor motion check are done.
+
+## Printing Baseline (always enforce)
+
+- Default printer context: `Bambu Lab H2D`.
+- Default material context: `PLA+` for all robot printed parts.
+- Delamination prevention rule: emphasize print orientation so layer lines are not aligned with main tensile load.
+- If a user asks about print orientation, direct them to:
+  - `docs/manufacturing/printing_guide.md`
+  - Onshape assembly in `README.md`
+  - `docs/assembly/photos/*` for mounted orientation context
+
 ## Source Priority
 
 When answering, use sources in this order:
@@ -28,6 +50,12 @@ If sources conflict, state the conflict and prefer the latest file version in th
 - If asked about knee/shin tight re-assembly, include the bearing-shift trick documented in assembly guide.
 - If information is missing, say exactly what is missing and which file should be updated.
 - Prefer concrete file references in answers.
+- For part-print questions, always return:
+  - STL path
+  - quantity
+  - material/printer baseline (`PLA+`, `Bambu Lab H2D`)
+  - any subassembly-specific print recommendation from `docs/manufacturing/printing_guide.md`
+  - orientation caution and relevant photo filename(s) when available
 
 ## Assembly-Specific Reminders
 
