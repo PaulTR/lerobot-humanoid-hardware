@@ -19,6 +19,17 @@ Anti-delamination and orientation rule:
   - `docs/assembly/photos/knee_mechanism_view_2.jpg`
   - `docs/assembly/photos/knee_mechanism_view_3.jpg`
 
+H2D reference project files (critical parts):
+- `docs/manufacturing/h2d_profiles/shin_tibias_example.3mf` + `docs/manufacturing/h2d_profiles/shin_tibias_print_example.png`
+- `docs/manufacturing/h2d_profiles/thigh_femur_example.3mf` + `docs/manufacturing/h2d_profiles/thigh_print_example.png`
+- `docs/manufacturing/h2d_profiles/hip_example.3mf` + `docs/manufacturing/h2d_profiles/hip_print_example.png`
+- Other parts are more straightforward and usually do not require dedicated `.3mf` guidance.
+- See `docs/manufacturing/h2d_profiles/README.md` for quick mapping.
+
+Intentional documentation scope:
+- Detailed slicing/orientation help is provided only for critical structural parts (`shin`, `thigh`, `hip`).
+- For other parts, there is usually one obvious safe orientation; if not, verify with Onshape and mounted assembly photos.
+
 
 ## torso
 
@@ -43,6 +54,9 @@ Anti-delamination and orientation rule:
 | right_leg/hipz/hip_z_hipz22.stl | 1 |
 
 Special recommendation: use `100%` infill for this subassembly.
+Reference project:
+- `docs/manufacturing/h2d_profiles/hip_example.3mf`
+- `docs/manufacturing/h2d_profiles/hip_print_example.png`
 
 ## hipx
 
@@ -66,6 +80,10 @@ Special recommendation: use `100%` infill for this subassembly.
 | right_leg/thigh/femur_v2_hat_femur_2.stl | 1 |
 
 Special recommendation: for the large thigh part, print it on its side (not on its front face).
+Reference project:
+- `docs/manufacturing/h2d_profiles/thigh_femur_example.3mf`
+- `docs/manufacturing/h2d_profiles/thigh_print_example.png`
+
 ## knee_mechanism
 
 | stl | quantity |
@@ -93,6 +111,10 @@ Special recommendation: for the large thigh part, print it on its side (not on i
 | right_leg/shin/tibias2_shin_spacer_2.stl | 1 |
 | right_leg/shin/tibias2_tibias12.stl | 1 |
 | right_leg/shin/tibias2_tibias22.stl | 1 |
+
+Reference project:
+- `docs/manufacturing/h2d_profiles/shin_tibias_example.3mf`
+- `docs/manufacturing/h2d_profiles/shin_tibias_print_example.png`
 
 ## ankle_mechanism
 

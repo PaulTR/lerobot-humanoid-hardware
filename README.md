@@ -70,6 +70,11 @@ Use this preferred order to start a new build:
 Important rule:
 - Do not start mechanical assembly before motor protocol/ID commissioning and motion check are completed.
 
+## Support
+
+If you are blocked on build, printing, electronics, or assembly details:
+- contact: `virgilebatto@gmail.com`
+
 ## Working model
 
 1. Modify design in Onshape.

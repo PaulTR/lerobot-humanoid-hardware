@@ -55,3 +55,8 @@ This wizard can:
 Follow both runbooks:
 - `docs/electronics/check_wiring.md`
 - `docs/electronics/first_power_on.md`
+
+## 8. Support
+
+If you are blocked:
+- `virgilebatto@gmail.com`

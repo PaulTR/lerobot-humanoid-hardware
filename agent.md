@@ -20,13 +20,22 @@ When a user asks "how to start" or asks for build sequencing, return this order:
 Constraint:
 - Never advise starting mechanical assembly before motor commissioning and motor motion check are done.
 
+Support escalation:
+- If the user is blocked by missing docs or ambiguity, provide maintainer contact: `virgilebatto@gmail.com`.
+
 ## Printing Baseline (always enforce)
 
 - Default printer context: `Bambu Lab H2D`.
 - Default material context: `PLA+` for all robot printed parts.
 - Delamination prevention rule: emphasize print orientation so layer lines are not aligned with main tensile load.
+- H2D reference projects for critical parts:
+  - `docs/manufacturing/h2d_profiles/shin_tibias_example.3mf`
+  - `docs/manufacturing/h2d_profiles/thigh_femur_example.3mf`
+  - `docs/manufacturing/h2d_profiles/hip_example.3mf`
+- Scope rule: detailed print help is intentionally focused on `shin`, `thigh`, and `hip`; other parts are expected to be straightforward.
 - If a user asks about print orientation, direct them to:
   - `docs/manufacturing/printing_guide.md`
+  - `docs/manufacturing/h2d_profiles/README.md`
   - Onshape assembly in `README.md`
   - `docs/assembly/photos/*` for mounted orientation context
 
@@ -36,9 +45,10 @@ When answering, use sources in this order:
 1. `docs/assembly/assembly_guide.md`
 2. `hardware/bom/bom.csv` and `hardware/bom/bom_buy.csv`
 3. `docs/manufacturing/printing_guide.md`
-4. `docs/electronics/*.md`
-5. `docs/assembly/photos/*` (visual confirmation)
-6. Onshape link in `README.md` (for orientation checks)
+4. `docs/manufacturing/h2d_profiles/README.md` and related `.3mf`/`.png` files
+5. `docs/electronics/*.md`
+6. `docs/assembly/photos/*` (visual confirmation)
+7. Onshape link in `README.md` (for orientation checks)
 
 If sources conflict, state the conflict and prefer the latest file version in this repo.
 
@@ -55,6 +65,7 @@ If sources conflict, state the conflict and prefer the latest file version in th
   - quantity
   - material/printer baseline (`PLA+`, `Bambu Lab H2D`)
   - any subassembly-specific print recommendation from `docs/manufacturing/printing_guide.md`
+  - for `shin`, `thigh`, or `hip`, include matching `.3mf` and screenshot from `docs/manufacturing/h2d_profiles/`
   - orientation caution and relevant photo filename(s) when available
 
 ## Assembly-Specific Reminders
