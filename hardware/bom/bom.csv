@@ -13,6 +13,7 @@ torso,fastener_screw,M3 screw,M3 x 8 cyl head,12,12
 torso,fastener_screw,M4 screw,M4 x 20 cyl head,16,16
 torso,fastener_screw,M5 screw,M5 x 10 cyl head,5,5
 torso,stl_print,torso/torso_can_holder.stl,stl,1,1
+torso,stl_print,torso/torso_can_holder_2.stl,stl,1,1
 torso,stl_print,torso/torso_imu_holder.stl,stl,1,1
 torso,stl_print,torso/torso_torso13.stl,stl,1,1
 torso,stl_print,torso/torso_torso23.stl,stl,1,1

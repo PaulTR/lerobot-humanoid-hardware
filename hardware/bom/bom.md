@@ -33,6 +33,7 @@
 | name | quantity |
 |---|---:|
 | [torso_can_holder.stl](../cad/stl/biped_platform/torso/torso_can_holder.stl) | 1 |
+| [torso_can_holder.stl](../cad/stl/biped_platform/torso/torso_can_holder_2.stl) | 1 |
 | [torso_imu_holder.stl](../cad/stl/biped_platform/torso/torso_imu_holder.stl) | 1 |
 | [torso_torso13.stl](../cad/stl/biped_platform/torso/torso_torso13.stl) | 1 |
 | [torso_torso23.stl](../cad/stl/biped_platform/torso/torso_torso23.stl) | 1 |
