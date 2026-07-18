@@ -82,15 +82,37 @@ STL To Print:
 | torso/torso_torso13.stl | 1 |
 | torso/torso_torso23.stl | 1 |
 | torso/torso_torso33.stl | 1 |
-| torso/torso_uper_torso_22.stl | 1 |
+| torso/torso_upper_torso_22.stl | 1 |
 | torso/torso_upper_torso_12.stl | 1 |
 
 > Comment: cheaper or better CAN-FD adapters may exist, but this one is currently the only adapter proven in this project to handle the RobStride CAN protocol.
 
 Assembly steps:
-1. Assemble each torso motor on its motor support and screw it.
-2. Place each motor-support subassembly on top of the bearing stack and screw it.
+Before starting, it's important to note that the torso motor supports have a directionality to them. Ensure that the assembly will align the ports on each motors towards the inside of the robot by aligning the screw holes as shown below. Notice that one of the inner screw holes should align with the slot in torso13.
+
+![Assembly Torso directionality](photos/assembly_torso/motor_support_direction.jpg)
+
+1. Place the two motors into their respective motor support (torso_torso23 and torso_torso33). Secure each with six M3x8 screws.
+
+![Assembly Torso](photos/assembly_torso/motor_support.jpg)
+
+2. Place each motor-support subassembly on top of the bearing stack and secure them with eight M4x20 screws. At this stage ensure that the motor cables face inward.
+
+![Lower Torso Assembly](photos/assembly_torso/torso_bottom_assembly.jpg)
+
 3. Verify both torso motor outputs rotate freely after tightening.
+
+4. Attach the CAN bus holder to the bottom of the assembly. This will not be secured using screws, but the part on the buttom extending from the base will fit in the lower assembly's groove.
+
+5. Place the CAN bus on the CAN bus holder and use torso/torso_can_holder_2.stl to secure it into place with four M2.5x20 screws.
+
+6. Use five M5x10 screws to connect torso_upper_torso_22 with torso_upper_torso_12. The two on the ends should be loosely inserted as they will be tightened in the next step.
+
+![Lower Torso Assembly](photos/assembly_torso/torso_upper_assembly_screw_locations.jpg)
+
+7. Place the upper assembly on to the lower assembly and tighten the screws at the end of the upper assembly.
+
+8. Attach the Raspberry Pi with the IMU holder to the top of the upper assembly using four M2.5x20 screws. Attach the IMU to the top of the IMU holder using four M2x5 screws. For the IMU, I soldered the pins to face up
 
 ## hipx
 
