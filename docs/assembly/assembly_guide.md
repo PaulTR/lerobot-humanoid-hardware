@@ -74,6 +74,7 @@ Components:
 | fastener_screw | M4 screw | M4 x 20 cyl head | 16 | 16 |
 | fastener_screw | M5 screw | M5 x 10 cyl head | 5 | 5 |
 | fastener_screw | M3 screw | M3 x 35 cyl head | 4 | 4 |
+| bearing | Bearing | 35x72x17 | 2 | 2 |
 
 STL To Print:
 | Name | Quantity |
@@ -97,25 +98,29 @@ Before starting, it's important to note that the torso motor supports have a dir
 
 ![Assembly Torso](photos/assembly_torso/motor_support.jpg)
 
-2. Place each motor-support subassembly on top of the bearing stack and secure them with eight M4x20 screws. At this stage ensure that the motor cables face inward.
+2. Insert two 35x72x17 bearings into the slots on torso_13.stl
+
+![Assembly Torso Bearings](photos/assembly_torso/torso_lower_bearings.jpg)
+
+3. Place each motor-support subassembly on top of the bearing stack and secure them with eight M4x20 screws. At this stage ensure that the motor cables face inward.
 
 ![Lower Torso Assembly](photos/assembly_torso/torso_bottom_assembly.jpg)
 
-3. Verify both torso motor outputs rotate freely after tightening.
+4. Verify both torso motor outputs rotate freely after tightening.
 
-4. Attach the CAN bus holder to the bottom of the assembly. This will not be secured using screws, but the part on the buttom extending from the base will fit in the lower assembly's groove.
+5. Attach the CAN bus holder to the bottom of the assembly. This will not be secured using screws, but the part on the buttom extending from the base will fit in the lower assembly's groove.
 
-5. Place the CAN bus on the CAN bus holder and use torso_can_holder_2.stl to secure it into place with four M3x35 screws.
+6. Place the CAN bus on the CAN bus holder and use torso_can_holder_2.stl to secure it into place with four M3x35 screws.
 
 ![Torso CAN Bus Assembly](photos/assembly_torso/torso_canbus.jpg)
 
-6. Use five M5x10 screws to connect torso_upper_torso_22 with torso_upper_torso_12. The two on the ends should be loosely inserted as they will be tightened in the next step.
+7. Use five M5x10 screws to connect torso_upper_torso_22 with torso_upper_torso_12. The two on the ends should be loosely inserted as they will be tightened in the next step.
 
 ![Lower Torso Assembly](photos/assembly_torso/torso_upper_assembly_screw_locations.jpg)
 
-7. Place the upper assembly on to the lower assembly and tighten the screws at the end of the upper assembly.
+8. Place the upper assembly on to the lower assembly and tighten the screws at the end of the upper assembly.
 
-8. Attach the Raspberry Pi with the IMU holder to the top of the upper assembly using four M2.5x20 screws. *Do not overtighten, as there's no extra space under the Raspberry Pi and you can damage the board*. Attach the IMU to the top of the IMU holder using four M2x5 screws. Pins on the IMU should be soldered so that the pins protrude from the 'front' of the board.
+9. Attach the Raspberry Pi with the IMU holder to the top of the upper assembly using four M2.5x20 screws. *Do not overtighten, as there's no extra space under the Raspberry Pi and you can damage the board*. Attach the IMU to the top of the IMU holder using four M2x5 screws. Pins on the IMU should be soldered so that the pins protrude from the 'front' of the board.
 
 ![Lower Torso Assembly](photos/assembly_torso/torso_imu_pi.jpg)
 
