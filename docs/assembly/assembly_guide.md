@@ -3,11 +3,10 @@
 Assembly order:
 1. Configure all motors (`docs/electronics/motor_commissioning.md`).
 2. Print all STL parts (`docs/manufacturing/printing_guide.md`).
-3. Build torso first.
-4. Build upper legs in order: `hipy (hipz in repo naming) -> hipx -> thigh` (left and right).
-5. In parallel, build lower legs in order: `foot -> ankle -> knee_mechanism -> shin -> ankle_mechanism` (left and right).
-6. Assemble upper and lower leg modules.
-7. Integrate both legs to torso and run wiring checks.
+3. Build upper legs in order: `torso -> hips (left and right) -> thigh (left and right)`.
+4. In parallel, build lower legs in order: `foot -> ankle -> knee_mechanism -> shin -> ankle_mechanism` (left and right).
+5. Assemble upper and lower leg modules.
+6. Integrate both legs to torso and run wiring checks.
 
 Common assembly rules:
 - For each subassembly, insert bearings first (press or gentle hammer).
@@ -161,7 +160,9 @@ Assembly steps:
 
 ![Hipz 12 Motor Mount](photos/assembly_hips/hipz12_motor_mount.jpg)
 
-4. Attach hip_z_hipz12 and hip_z_hipz12_sym to motor 1 or 7, respectively, using three M3x10 screws.
+4. Attach hip_z_hipz12 and hip_z_hipz12_sym to motor 1 or 7, respectively, using three M3x10 screws. 
+
+> Comment: You will need a longer hex key than what comes with most screw sets. I had success with a 13cm key.
 
 > Comment: The hip pieces have spaces for six screws (also shown in the CAD file), but if the hip piece is attached to the torso without the motor in it, the motor cannot fit into place. If the motor is placed into the hip piece, three of the screw holes are covered. This is an open item for fixing in the future.
 
@@ -178,6 +179,8 @@ Assembly steps:
 7. Insert hipx_2_hipxy and hipx_2_hipxy_sym into their respective points from the hip z assemblies that you just completed. Mount each to the RobStride O2 motor using six M4x12 screws.
 
 8. Verify free motion. There may be a slight clicking from the long piece extending from hipz12/hipz12_sym and the notch on the bottom of the lower torso.
+
+![Hipz Complete](photos/assembly_hips/hips_complete.jpg)
 
 ## thigh
 
