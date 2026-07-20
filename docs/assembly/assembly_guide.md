@@ -170,7 +170,7 @@ Assembly steps:
 
 6. Attach hipz22 and hipz22_sym to hipz12 and hipz12_sym. Use four M4x45 screws on the lower side and 6 M4x40 screws on the top side to attach them together.
 
-![Hipz Complete](photos/assembly_hipz/hipz_attached.jpg)
+![Hipz Complete](photos/assembly_hipz/hipz_complete.jpg)
 
 7. Verify free motion. There may be a slight clicking from the long piece extending from hipz12/hipz12_sym and the notch on the bottom of the lower torso.
 
