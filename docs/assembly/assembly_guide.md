@@ -146,17 +146,17 @@ STL To Print:
 Assembly steps:
 1. Insert the 35x72x17 bearings into hip_z_hipz22 and hip_z_hipz22_sym
 
-![Hipz 22 with Bearing](photos/assembly_torso/hipz22_bearings.jpg)
+![Hipz 22 with Bearing](photos/assembly_hipz/hipz22_bearings.jpg)
 
 2. Insert the RobStride O2 motors into hip_z_hipz12 and hip_z_hipz12_sym. Double check which hip piece you are inserting your motors into. 
 
 > Comment: It is difficult to rotate the entire motor body or remove the motor after insertion, so confirm hole alignment before setting.
 
-![Hipz 12 with Motors](photos/assembly_torso/hipz_motors.jpg)
+![Hipz 12 with Motors](photos/assembly_hipz/hipz_motors.jpg)
 
 3. Use 9 M3x10 screws to attach the RobStride O2 motor to hipz12 and hipz12_sym, respectively.
 
-![Hipz 12 Motor Mount](photos/assembly_torso/hipz12_motor_mount.jpg)
+![Hipz 12 Motor Mount](photos/assembly_hipz/hipz12_motor_mount.jpg)
 
 4. Attach hip_z_hipz12 and hip_z_hipz12_sym to motor 1 or 7, respectively, using three M3x10 screws.
 
@@ -164,13 +164,13 @@ Assembly steps:
 
 > Comment: The thin piece extending from hipz12 should sit to the side of a blocking piece on the torso track, preventing the hip from rotating 360 degrees.
 
-![Hipz 12 Motor Alignment](photos/assembly_torso/hipz12_alignment.jpg)
+![Hipz 12 Motor Alignment](photos/assembly_hipz/hipz12_alignment.jpg)
 
 5. Route the hip pass-through sub-cable through hipz according to `hardware/electronics/cabling/README.md`.
 
 6. Attach hipz22 and hipz22_sym to hipz12 and hipz12_sym. Use four M4x45 screws on the lower side and 6 M4x40 screws on the top side to attach them together.
 
-![Hipz Complete](photos/assembly_torso/hipz_attached.jpg)
+![Hipz Complete](photos/assembly_hipz/hipz_attached.jpg)
 
 7. Verify free motion. There may be a slight clicking from the long piece extending from hipz12/hipz12_sym and the notch on the bottom of the lower torso.
 
