@@ -180,6 +180,8 @@ Assembly steps:
 
 8. Verify free motion. There may be a slight clicking from the long piece extending from hipz12/hipz12_sym and the notch on the bottom of the lower torso.
 
+At this point you should have a completed upper for the legs robot.
+
 ![Hipz Complete](photos/assembly_hips/hips_complete.jpg)
 
 ## thigh
