@@ -4,7 +4,7 @@ Assembly order:
 1. Configure all motors (`docs/electronics/motor_commissioning.md`).
 2. Print all STL parts (`docs/manufacturing/printing_guide.md`).
 3. Build torso first.
-4. Build upper legs in order: `hipx -> hipy (hipz in repo naming) -> thigh` (left and right).
+4. Build upper legs in order: `hipy (hipz in repo naming) -> hipx -> thigh` (left and right).
 5. In parallel, build lower legs in order: `foot -> ankle -> knee_mechanism -> shin -> ankle_mechanism` (left and right).
 6. Assemble upper and lower leg modules.
 7. Integrate both legs to torso and run wiring checks.
@@ -124,6 +124,55 @@ Before starting, it's important to note that the torso motor supports have a dir
 
 ![Lower Torso Assembly](photos/assembly_torso/torso_imu_pi.jpg)
 
+## hipz
+
+Components:
+| Category | Name | Specification | Qty / Subassembly | Qty / Robot |
+|---|---|---|---:|---:|
+| motor | RobStride O2 | actuator | 1 | 2 |
+| bearing | Bearing | 35x72x17 | 2 | 4 |
+| fastener_screw | M3 screw | M3 x 10 cyl head | 12 | 24 |
+| fastener_screw | M4 screw | M4 x 40 cyl head | 6 | 12 |
+| fastener_screw | M4 screw | M4 x 45 cyl head | 4 | 8 |
+
+STL To Print:
+| Name | Quantity |
+|---|---:|
+| left_leg/hipz/hip_z_hipz12_sym.stl | 1 |
+| left_leg/hipz/hip_z_hipz22_sym.stl | 1 |
+| right_leg/hipz/hip_z_hipz12.stl | 1 |
+| right_leg/hipz/hip_z_hipz22.stl | 1 |
+
+Assembly steps:
+1. Insert the 35x72x17 bearings into hip_z_hipz22 and hip_z_hipz22_sym
+
+![Hipz 22 with Bearing](photos/assembly_torso/hipz22_bearings.jpg)
+
+2. Insert the RobStride O2 motors into hip_z_hipz12 and hip_z_hipz12_sym. Double check which hip piece you are inserting your motors into. 
+
+> Comment: It is difficult to rotate the entire motor body or remove the motor after insertion, so confirm hole alignment before setting.
+
+![Hipz 12 with Motors](photos/assembly_torso/hipz_motors.jpg)
+
+3. Use 9 M3x10 screws to attach the RobStride O2 motor to hipz12 and hipz12_sym, respectively.
+
+![Hipz 12 Motor Mount](photos/assembly_torso/hipz12_motor_mount.jpg)
+
+4. Attach hip_z_hipz12 and hip_z_hipz12_sym to motor 1 or 7, respectively, using three M3x10 screws.
+
+> Comment: The hip pieces have spaces for six screws (also shown in the CAD file), but if the hip piece is attached to the torso without the motor in it, the motor cannot fit into place. If the motor is placed into the hip piece, three of the screw holes are covered. This is an open item for fixing in the future.
+
+> Comment: The thin piece extending from hipz12 should sit to the side of a blocking piece on the torso track, preventing the hip from rotating 360 degrees.
+
+![Hipz 12 Motor Alignment](photos/assembly_torso/hipz12_alignment.jpg)
+
+5. Route the hip pass-through sub-cable through hipz according to `hardware/electronics/cabling/README.md`.
+
+6. Attach hipz22 and hipz22_sym to hipz12 and hipz12_sym. Use four M4x45 screws on the lower side and 6 M4x40 screws on the top side to attach them together.
+
+![Hipz Complete](photos/assembly_torso/hipz_attached.jpg)
+
+7. Verify free motion. There may be a slight clicking from the long piece extending from hipz12/hipz12_sym and the notch on the bottom of the lower torso.
 
 ## hipx
 
@@ -147,31 +196,6 @@ Assembly steps:
 1. Start by inserting the hip axis and fixing it to the motor.
 2. Align hipx parts on the previous subassembly and screw the full assembly.
 3. Verify hipx motion is free with no hard point.
-
-## hipz
-
-Components:
-| Category | Name | Specification | Qty / Subassembly | Qty / Robot |
-|---|---|---|---:|---:|
-| motor | RobStride O2 | actuator | 1 | 2 |
-| bearing | Bearing | 35x72x17 | 2 | 4 |
-| fastener_screw | M4 screw | M4 x 10 cyl head | 8 | 16 |
-| fastener_screw | M4 screw | M4 x 20 cyl head | 8 | 16 |
-
-STL To Print:
-| Name | Quantity |
-|---|---:|
-| left_leg/hipz/hip_z_hipz12_sym.stl | 1 |
-| left_leg/hipz/hip_z_hipz22_sym.stl | 1 |
-| right_leg/hipz/hip_z_hipz12.stl | 1 |
-| right_leg/hipz/hip_z_hipz22.stl | 1 |
-
-Assembly steps:
-1. Insert hipz bearings.
-2. Start by inserting the axis and fixing it to the motor (`hipz` naming in this repo corresponds to the hipy joint).
-3. Place and screw the motor.
-4. Route the hip pass-through sub-cable through hipz according to `hardware/electronics/cabling/README.md`.
-5. Assemble the bearing to the hipz assembly and verify free motion.
 
 ## thigh
 
