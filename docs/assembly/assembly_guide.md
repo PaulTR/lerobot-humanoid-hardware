@@ -124,7 +124,7 @@ Before starting, it's important to note that the torso motor supports have a dir
 
 ![Lower Torso Assembly](photos/assembly_torso/torso_imu_pi.jpg)
 
-## hipz
+## Hips
 
 Components:
 | Category | Name | Specification | Qty / Subassembly | Qty / Robot |
@@ -132,6 +132,7 @@ Components:
 | motor | RobStride O2 | actuator | 1 | 2 |
 | bearing | Bearing | 35x72x17 | 2 | 4 |
 | fastener_screw | M3 screw | M3 x 10 cyl head | 12 | 24 |
+| fastener_screw | M4 screw | M4 x 12 cyl head | 6 | 12 |
 | fastener_screw | M4 screw | M4 x 40 cyl head | 6 | 12 |
 | fastener_screw | M4 screw | M4 x 45 cyl head | 4 | 8 |
 
@@ -142,6 +143,8 @@ STL To Print:
 | left_leg/hipz/hip_z_hipz22_sym.stl | 1 |
 | right_leg/hipz/hip_z_hipz12.stl | 1 |
 | right_leg/hipz/hip_z_hipz22.stl | 1 |
+| left_leg/hipx/hipx_2_hipxy_sym.stl | 1 |
+| right_leg/hipx/hipx_2_hipxy.stl | 1 |
 
 Assembly steps:
 1. Insert the 35x72x17 bearings into hip_z_hipz22 and hip_z_hipz22_sym
@@ -172,30 +175,9 @@ Assembly steps:
 
 ![Hipz Complete](photos/assembly_hipz/hipz_complete.jpg)
 
-7. Verify free motion. There may be a slight clicking from the long piece extending from hipz12/hipz12_sym and the notch on the bottom of the lower torso.
+7. Insert hipx_2_hipxy and hipx_2_hipxy_sym into their respective points from the hip z assemblies that you just completed. Mount each to the RobStride O2 motor using six M4x12 screws.
 
-## hipx
-
-Components:
-| Category | Name | Specification | Qty / Subassembly | Qty / Robot |
-|---|---|---|---:|---:|
-| fastener_screw | M3 screw | M3 x 8 cyl head | 3 | 6 |
-| fastener_screw | M4 screw | M4 x 40 cyl head | 6 | 12 |
-| fastener_screw | M4 screw | M4 x 45 cyl head | 9 | 18 |
-| fastener_screw | M4 screw | M4 x 8 cyl head | 8 | 16 |
-
-> Comment: the `hipx` M3 screw line is optional and can be removed without issue.
-
-STL To Print:
-| Name | Quantity |
-|---|---:|
-| left_leg/hipx/hipx_2_hipxy_sym.stl | 1 |
-| right_leg/hipx/hipx_2_hipxy.stl | 1 |
-
-Assembly steps:
-1. Start by inserting the hip axis and fixing it to the motor.
-2. Align hipx parts on the previous subassembly and screw the full assembly.
-3. Verify hipx motion is free with no hard point.
+8. Verify free motion. There may be a slight clicking from the long piece extending from hipz12/hipz12_sym and the notch on the bottom of the lower torso.
 
 ## thigh
 
