@@ -54,7 +54,7 @@ Mounted robot photo references (explicit names):
 - `docs/assembly/photos/knee_mechanism_view_2.jpg`
 - `docs/assembly/photos/knee_mechanism_view_3.jpg`
 
-## torso
+## Torso
 
 Components:
 | Category | Name | Specification | Qty / Subassembly | Qty / Robot |
@@ -156,7 +156,7 @@ Assembly steps:
 
 ![Hipz 12 with Motors](photos/assembly_hips/hipz_motors.jpg)
 
-3. Use 9 M3x10 screws to attach the RobStride O2 motor to hipz12 and hipz12_sym, respectively.
+3. Use nine M3x10 screws to attach the RobStride O2 motor to hipz12 and hipz12_sym, respectively.
 
 ![Hipz 12 Motor Mount](photos/assembly_hips/hipz12_motor_mount.jpg)
 
@@ -172,7 +172,7 @@ Assembly steps:
 
 5. Route the hip pass-through sub-cable through hipz according to `hardware/electronics/cabling/README.md`.
 
-6. Attach hipz22 and hipz22_sym to hipz12 and hipz12_sym. Use four M4x45 screws on the lower side and 6 M4x40 screws on the top side to attach them together.
+6. Attach hipz22 and hipz22_sym to hipz12 and hipz12_sym. Use four M4x45 screws on the lower side and six M4x40 screws on the top side to attach them together.
 
 ![Hipz Complete](photos/assembly_hips/hipz_complete.jpg)
 
@@ -191,29 +191,70 @@ Components:
 |---|---|---|---:|---:|
 | motor | RobStride O3 | actuator | 2 | 4 |
 | bearing | Bearing | 15x21x4 | 1 | 2 |
-| bearing | Bearing | 5x16x5 | 2 | 4 |
 | fastener_screw | M2.5 screw | M2.5 x 6 cyl head | 3 | 6 |
-| fastener_screw | M4 screw | M4 x 10 cyl head | 4 | 8 |
-| fastener_screw | M4 screw | M4 x 23.5 cyl head | 4 | 8 |
-| fastener_screw | M4 screw | M4 x 8 cyl head | 10 | 20 |
-| fastener_axis | Shoulder screw 07534-05X40 | ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9 | 1 | 2 |
+| fastener_screw | M4 screw | M4 x 10 cyl head | 12 | 24 |
+| fastener_screw | M4 screw | M4 x 16 cyl head | 2 | 4 |
+| fastener_screw | M4 screw | M4 x 20 cyl head | 6 | 12 |
+| fastener_screw | M4 screw | M4 x 30 cyl head | 4 | 8 |
 
 STL To Print:
 | Name | Quantity |
 |---|---:|
 | left_leg/thigh/femur_v2_femur_12_sym_1.stl | 1 |
 | left_leg/thigh/femur_v2_femur_22_sym_1.stl | 1 |
-| left_leg/thigh/femur_v2_hat_femur_2.stl | 1 |
+| left_leg/thigh/ujoint_hat_small_1.stl | 1 |
 | right_leg/thigh/femur_v2_femur_12_1.stl | 1 |
 | right_leg/thigh/femur_v2_femur_22_1.stl | 1 |
-| right_leg/thigh/femur_v2_hat_femur_2.stl | 1 |
+| right_leg/thigh/ujoint_hat_small_1.stl | 1 |
+
+> Comment: The left leg follows the same instructions as the right, though uses the symetrical pieces. They can be built concurrently.
 
 Assembly steps:
-1. Insert the exterior thigh shell (`femur_22`) into the hipy joint side first (`hipz` naming in this repo).
-2. Fix `femur_12` to the hipy/hipz side.
-3. Install and route the thigh sub-cable before final closing (`hardware/electronics/cabling/README.md`).
-4. Screw `femur_12` and `femur_22` together once joint alignment is correct.
-5. Do not lock thigh with permanent goupilles if you want it demountable.
+1. Insert one 15x21x4 bearing into the joint hole on `hipxy`.
+
+> Comment: This is a difficult piece to insert. I applied WD-40 to the bearing slot and gently tapped it into position with the flat side of a hammer.
+
+![Hip Bearing](photos/assembly_thighs/hip_bearing.jpg)
+
+2. Insert `femur_22` into the bearing/hipxy.
+
+![Femur 22 inserted](photos/assembly_thighs/femur_22_inserted.jpg)
+
+3. Using three M2.5 x 6 screws, attach ujoint_hat_small_1 to `femur_22` over the bearing to hold the piece in place.
+
+![Joint hat](photos/assembly_thighs/joint_hat.jpg)
+
+4. The RobStride O3 motors will be inserted in a way where half of the motor should have screws on the back side and the other half of the backside shouldn't have any screws. Remove two of the screws beside one of the data/power ports and insert them into the blank spaces on the other side of the motor. You can do this for all of the RobStride O3 motors used in this subassembly.
+
+![Motor screw positions](photos/assembly_thighs/motor_screws.jpg)
+
+5. Push RobStride O3 ID 3 (or 9 on the left leg) into `femur_12`. Align the holes that do not have screws so they are aligned with the openings in `femur_12`. Secure it with four M4 x 10 screws.
+
+![Mounted femur top motor](photos/assembly_thighs/top_motor_mounted.jpg)
+
+6. Attach `femur_12` to `hip_xy` using six M4 x 20 screws. `femur_22` should align with `femur_12` so that they fit flush together.
+
+![Mounted femur 12](photos/assembly_thighs/mounted_femur_12.jpg)
+
+7. Install and route the thigh sub-cable before final closing (`hardware/electronics/cabling/README.md`).
+
+> Comment: Since I don't have the wiring diagram at this point, I'm holding off on routing wires. Do what you think is best here. - Paul Ruiz
+
+8. Attach `femur_12` to `femur_22` using four M4 x 30 screws near the top motor and two M4 x 16 motors at the lower portion.
+
+> Comment: I found the lower holes to be pretty loose. I added two M4 threaded heat inserts on both legs to secure it better. Just be careful here as the femurs were the pieces that took the longest to print, so you don't want to ruin them this early.
+
+9. Insert the second RobStride O3 motor (ID 4 or 10) into the femur. If you didn't adjust the screws on the back earlier, now is the time to do that. Mount the motor into place using eight M4 x 10 screws (four on both sides).
+
+![Motor 2 screws front](photos/assembly_thighs/motor_2_screws_front.jpg)
+
+![Motor 2 screws back](photos/assembly_thighs/motor_2_screws_back.jpg)
+
+> Comment: Original note here: Do not lock thigh with permanent goupilles if you want it demountable. Paul note: I haven't added pins as I've been going along because they weren't in the CAD file. Will go back and disassemble/reassemble some aspects to get them and update this guide later when that's done.
+
+Assembly at this point:
+
+![Thigh complete](photos/assembly_thighs/thigh_complete.jpg)
 
 ## foot
 
@@ -244,6 +285,7 @@ Assembly steps:
 1. Insert foot bearings and pins/goupilles.
 2. Assemble and screw foot parts.
 3. Check foot alignment before full tightening.
+
 ## ankle
 
 Components:
@@ -280,7 +322,7 @@ Components:
 | bearing | Bearing | 15x21x4 | 2 | 4 |
 | fastener_screw | M3 screw | M3 x 12.5 cyl head | 3 | 6 |
 | fastener_screw | M4 screw | M4 x 16 cyl head | 8 | 16 |
-
+| fastener_axis | Shoulder screw 07534-05X40 | ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9 | 1 | 2 |
 STL To Print:
 | Name | Quantity |
 |---|---:|
@@ -290,6 +332,7 @@ STL To Print:
 | right_leg/knee_mechanism/femur_v2_knee_actuation_1.stl | 1 |
 | right_leg/knee_mechanism/femur_v2_knee_rod12_1.stl | 1 |
 | right_leg/knee_mechanism/femur_v2_knee_rod22_1.stl | 1 |
+
 
 Assembly steps:
 1. Pre-assemble the knee mechanism with its motor and rods.
@@ -322,12 +365,14 @@ STL To Print:
 | left_leg/shin/tibias2_shin_spacer_2.stl | 1 |
 | left_leg/shin/tibias2_tibias12_sym_4.stl | 1 |
 | left_leg/shin/tibias2_tibias22_sym_4.stl | 1 |
+| left_leg/thigh/femur_v2_hat_femur_2.stl | 1 |
 | right_leg/shin/spacer12_5_9_4_5.stl | 1 |
 | right_leg/shin/spacer22_5_9_4_5.stl | 1 |
 | right_leg/shin/tibias2_hat_big.stl | 1 |
 | right_leg/shin/tibias2_shin_spacer_2.stl | 1 |
 | right_leg/shin/tibias2_tibias12.stl | 1 |
 | right_leg/shin/tibias2_tibias22.stl | 1 |
+| right_leg/thigh/femur_v2_hat_femur_2.stl | 1 |
 
 Assembly steps:
 1. Install M3 inserts first (`4` per shin).
@@ -346,6 +391,8 @@ Components:
 | fastener_screw | M5 screw | M5 x 15 cyl head | 4 | 8 |
 | joint_spherical | Spherical joint 27628-01-05 | Norelem | 4 | 8 |
 | fastener_axis | Shoulder screw 07534-05X20 | ISO7379, D1=5, L1=20, B=8, M4, steel 12.9 | 4 | 8 |
+| bearing | Bearing | 5x16x5 | 2 | 4 |
+
 
 STL To Print:
 | Name | Quantity |
@@ -358,6 +405,7 @@ STL To Print:
 | left_leg/ankle_mechanism/tibias2_rod_small.stl | 1 |
 | left_leg/ankle_mechanism/tibias_actuation_ankle_12.stl | 1 |
 | left_leg/ankle_mechanism/tibias_actuation_ankle_22.stl | 1 |
+
 | right_leg/ankle_mechanism/bearing_spacer14_5_7_3.stl | 1 |
 | right_leg/ankle_mechanism/bearing_spacer24_5_7_3.stl | 1 |
 | right_leg/ankle_mechanism/bearing_spacer34_5_7_3.stl | 1 |
@@ -366,6 +414,9 @@ STL To Print:
 | right_leg/ankle_mechanism/tibias2_rod_small.stl | 1 |
 | right_leg/ankle_mechanism/tibias_actuation_ankle_12.stl | 1 |
 | right_leg/ankle_mechanism/tibias_actuation_ankle_22.stl | 1 |
+
+
+
 
 Assembly steps:
 1. Install spherical joints on rods (`2` per rod, `4` per leg, `8` per robot).
