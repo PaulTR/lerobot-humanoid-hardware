@@ -167,7 +167,7 @@ Assembly steps:
 
 > Comment: The hip pieces have spaces for six screws (also shown in the CAD file), but if the hip piece is attached to the torso without the motor in it, the motor cannot fit into place. If the motor is placed into the hip piece, three of the screw holes are covered. This is an open item for fixing in the future.
 
-> Comment: The thin piece extending from hipz12 should sit to the side of a blocking piece on the torso track, preventing the hip from rotating 360 degrees.
+> Comment: The thin piece extending from hipz12 should sit to the side of a blocking piece on the torso track, preventing the hip from rotating 360 degrees (in theory, they also break off if too much force applied).
 
 ![Hipz 12 Motor Alignment](photos/assembly_hips/hipz12_alignment.jpg)
 
@@ -353,8 +353,6 @@ Components:
 | fastener_screw | M4 screw | M4 x 10 cyl head | 16 | 32 |
 | fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 9 | 18 |
 | fastener_nut | Nut M4 | M4 nut | 4 | 8 |
-
-| fastener_nut | Nut M4 | M4 nut | 3 | 6 |
 
 STL To Print:
 | Name | Quantity |
