@@ -10,9 +10,9 @@ Assembly order:
 
 Common assembly rules:
 - For each subassembly, insert bearings first (press or gentle hammer).
-- Place motor goupille/pin during the same phase as bearing insertion.
+- Place motor metal pin during the same phase as bearing insertion.
 - Exception: in `knee_mechanism` and `ankle`, one interface should stay slightly loose but still movable.
-- For subassembly goupilles: place them during assembly except on `thigh` (keep thigh demountable).
+- For subassembly pins: place them during assembly except on `thigh` (keep thigh demountable).
 - Motor orientation is critical: follow the Onshape assembly orientation relative to each motor connector, otherwise cable length can become insufficient.
 - Default thread strategy is direct screw in plastic; use around `5 Nm` for non-structural plastic threads.
 - For motor threaded holes and structural insert zones, use higher torque appropriate to the thread/material.
@@ -202,10 +202,10 @@ STL To Print:
 |---|---:|
 | left_leg/thigh/femur_v2_femur_12_sym_1.stl | 1 |
 | left_leg/thigh/femur_v2_femur_22_sym_1.stl | 1 |
-| left_leg/thigh/ujoint_hat_small_1.stl | 1 |
+| left_leg/thigh/femur_hat_small_1.stl | 1 |
 | right_leg/thigh/femur_v2_femur_12_1.stl | 1 |
 | right_leg/thigh/femur_v2_femur_22_1.stl | 1 |
-| right_leg/thigh/ujoint_hat_small_1.stl | 1 |
+| right_leg/thigh/femur_hat_small_1.stl | 1 |
 
 > Comment: The left leg follows the same instructions as the right, though uses the symetrical pieces. They can be built concurrently.
 
@@ -250,20 +250,23 @@ Assembly steps:
 
 ![Motor 2 screws back](photos/assembly_thighs/motor_2_screws_back.jpg)
 
-> Comment: Original note here: Do not lock thigh with permanent goupilles if you want it demountable. Paul note: I haven't added pins as I've been going along because they weren't in the CAD file. Will go back and disassemble/reassemble some aspects to get them and update this guide later when that's done.
+> Comment: Do not lock thigh with permanent pins if you want it demountable.
 
 Assembly at this point:
 
 ![Thigh complete](photos/assembly_thighs/thigh_complete.jpg)
 
-## foot
+## Foot and Ankle
 
 Components:
 | Category | Name | Specification | Qty / Subassembly | Qty / Robot |
 |---|---|---|---:|---:|
 | bearing | Bearing | 5x16x5 | 2 | 4 |
-| fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 3 | 6 |
+| fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 9 | 18 |
+| fastener_axis | Shoulder screw 07534-05X20 | 2 | 4 |
+| fastener_axis | Shoulder screw 07534-05X40| 1 | 2 |
 | fastener_nut | Nut M4 | M4 nut | 3 | 6 |
+| joint_spherical | Spherical joint 27628-01-05 | 2 | 4
 
 STL To Print:
 | Name | Quantity |
@@ -272,6 +275,9 @@ STL To Print:
 | left_leg/foot/bearing_spacer24_5_7_3.stl | 1 |
 | left_leg/foot/bearing_spacer34_5_7_3.stl | 1 |
 | left_leg/foot/bearing_spacer44_5_7_3.stl | 1 |
+| left_leg/ankle/ujoint_spacer_12_ujoint.stl | 1 |
+| left_leg/ankle/ujoint_spacer_22_ujoint.stl | 1 |
+| left_leg/ankle/ujoint_ujoint.stl | 1 |
 | left_leg/foot/foot_foot.stl | 1 |
 | left_leg/foot/foot_hat_small.stl | 1 |
 | right_leg/foot/bearing_spacer14_5_7_3.stl | 1 |
@@ -280,38 +286,26 @@ STL To Print:
 | right_leg/foot/bearing_spacer44_5_7_3.stl | 1 |
 | right_leg/foot/foot_foot.stl | 1 |
 | right_leg/foot/foot_hat_small.stl | 1 |
-
-Assembly steps:
-1. Insert foot bearings and pins/goupilles.
-2. Assemble and screw foot parts.
-3. Check foot alignment before full tightening.
-
-## ankle
-
-Components:
-| Category | Name | Specification | Qty / Subassembly | Qty / Robot |
-|---|---|---|---:|---:|
-| fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 6 | 12 |
-| fastener_axis | Shoulder screw 07534-05X40 | ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9 | 1 | 2 |
-
-STL To Print:
-| Name | Quantity |
-|---|---:|
-| left_leg/ankle/ujoint_hat_small_12.stl | 1 |
-| left_leg/ankle/ujoint_hat_small_22.stl | 1 |
-| left_leg/ankle/ujoint_spacer_12_ujoint.stl | 1 |
-| left_leg/ankle/ujoint_spacer_22_ujoint.stl | 1 |
-| left_leg/ankle/ujoint_ujoint.stl | 1 |
-| right_leg/ankle/ujoint_hat_small_12.stl | 1 |
-| right_leg/ankle/ujoint_hat_small_22.stl | 1 |
 | right_leg/ankle/ujoint_spacer_12_ujoint.stl | 1 |
 | right_leg/ankle/ujoint_spacer_22_ujoint.stl | 1 |
 | right_leg/ankle/ujoint_ujoint.stl | 1 |
 
 Assembly steps:
-1. Assemble U-joint parts and install pins/goupilles.
-2. Insert the assembled U-joint into shin bearings (bearings are installed in the shin subassembly, not in ankle STL parts).
-3. Keep one ankle interface slightly loose but still movable.
+
+> Comment: You will follow these same steps for both feet.
+
+1. Attach two spherical joints between the notches at the front of the foot and secure into place using two 5x20 shoulder screws. When inserting the shoulder screw, place a 5x6x3 spacer on both side of the spherical joints. Secure shoulder screw with an M4 nut.
+
+![Foot front spherical joints](photos/assembly_feet/foot_front.jpg)
+
+2. Place two 5x16x5 bearings into the grooves at the back of the foot. Apply firm even pressure to seat them.
+
+![Foot back bearings](photos/assembly_feet/foot_back_bearings.jpg)
+
+3. Place the u-joint between the back bearings with a u-joint spacer on both sides of the ujoint. Secure into place using a 5x40 shoulder screw and M4 nut. Attach the foot_hat_small piece over the back bearing and secure in place using three M2.5x8 screws.
+
+![Foot ankle joint](photos/assembly_feet/foot_ankle_joint.jpg)
+
 4. Verify free ankle motion after tightening.
 
 ## knee_mechanism
@@ -322,7 +316,7 @@ Components:
 | bearing | Bearing | 15x21x4 | 2 | 4 |
 | fastener_screw | M3 screw | M3 x 12.5 cyl head | 3 | 6 |
 | fastener_screw | M4 screw | M4 x 16 cyl head | 8 | 16 |
-| fastener_axis | Shoulder screw 07534-05X40 | ISO7379, D1=5, L1=40, B=8, M4, SW=2.5, steel 12.9 | 1 | 2 |
+
 STL To Print:
 | Name | Quantity |
 |---|---:|
@@ -366,6 +360,8 @@ STL To Print:
 | left_leg/shin/tibias2_tibias12_sym_4.stl | 1 |
 | left_leg/shin/tibias2_tibias22_sym_4.stl | 1 |
 | left_leg/thigh/femur_v2_hat_femur_2.stl | 1 |
+| left_leg/ankle/ujoint_hat_small_12.stl | 1 |
+| left_leg/ankle/ujoint_hat_small_22.stl | 1 |
 | right_leg/shin/spacer12_5_9_4_5.stl | 1 |
 | right_leg/shin/spacer22_5_9_4_5.stl | 1 |
 | right_leg/shin/tibias2_hat_big.stl | 1 |
@@ -373,6 +369,8 @@ STL To Print:
 | right_leg/shin/tibias2_tibias12.stl | 1 |
 | right_leg/shin/tibias2_tibias22.stl | 1 |
 | right_leg/thigh/femur_v2_hat_femur_2.stl | 1 |
+| right_leg/ankle/ujoint_hat_small_12.stl | 1 |
+| right_leg/ankle/ujoint_hat_small_22.stl | 1 |
 
 Assembly steps:
 1. Install M3 inserts first (`4` per shin).
@@ -405,7 +403,6 @@ STL To Print:
 | left_leg/ankle_mechanism/tibias2_rod_small.stl | 1 |
 | left_leg/ankle_mechanism/tibias_actuation_ankle_12.stl | 1 |
 | left_leg/ankle_mechanism/tibias_actuation_ankle_22.stl | 1 |
-
 | right_leg/ankle_mechanism/bearing_spacer14_5_7_3.stl | 1 |
 | right_leg/ankle_mechanism/bearing_spacer24_5_7_3.stl | 1 |
 | right_leg/ankle_mechanism/bearing_spacer34_5_7_3.stl | 1 |
