@@ -4,9 +4,8 @@ Assembly order:
 1. Configure all motors (`docs/electronics/motor_commissioning.md`).
 2. Print all STL parts (`docs/manufacturing/printing_guide.md`).
 3. Build upper legs in order: `torso -> hips (left and right) -> thigh (left and right)`.
-4. In parallel, build lower legs in order: `foot -> ankle -> knee_mechanism -> shin -> ankle_mechanism` (left and right).
-5. Assemble upper and lower leg modules.
-6. Integrate both legs to torso and run wiring checks.
+4. Assemble upper and lower leg modules.
+5. Integrate both legs to torso and run wiring checks.
 
 Common assembly rules:
 - For each subassembly, insert bearings first (press or gentle hammer).
@@ -21,12 +20,14 @@ Common assembly rules:
 - Tools are prerequisites only (not assemblies).
 
 Reference files:
+# TODO Update BoM for simplified instructions
 - `hardware/bom/bom.csv`
 - `hardware/bom/bom_buy.csv`
 - `docs/manufacturing/printing_guide.md`
 - `docs/electronics/motor_commissioning.md`
 - `hardware/electronics/cabling/README.md`
 
+# TODO Get a wiring diagram
 Leg cabling note:
 - Left and right legs use the same sub-cable design and routing logic.
 - Cable legend: red = power, green = CAN, blue = CAN + power.
@@ -196,6 +197,7 @@ Components:
 | fastener_screw | M4 screw | M4 x 16 cyl head | 2 | 4 |
 | fastener_screw | M4 screw | M4 x 20 cyl head | 6 | 12 |
 | fastener_screw | M4 screw | M4 x 30 cyl head | 4 | 8 |
+| fastener_insert | Heat-set insert M4 | brass threaded insert M4 | 2 | 4 |
 
 STL To Print:
 | Name | Quantity |
@@ -220,7 +222,7 @@ Assembly steps:
 
 ![Femur 22 inserted](photos/assembly_thighs/femur_22_inserted.jpg)
 
-3. Using three M2.5 x 6 screws, attach ujoint_hat_small_1 to `femur_22` over the bearing to hold the piece in place.
+3. Using three M2.5 x 6 screws, attach femur_hat_small_1 to `femur_22` over the bearing to hold the piece in place.
 
 ![Joint hat](photos/assembly_thighs/joint_hat.jpg)
 
@@ -332,26 +334,27 @@ Assembly steps:
 
 ![Knee actuator with bearings](photos/assembly_knee_mechanism/knee_actuator.jpg)
 
-2. Attach knee_rod12 and knee_rod22 to the knee actuator, then align and secure with three M3x18 screws
+2. Attach knee_rod12 and knee_rod22 to the knee actuator, then align and secure with three M3x18 screws. Confirm orientation as this mechanism will move the tibia from the femur and needs to align properly to not collide with other parts of the robot.
 
 ![Knee rods for subassembly](photos/assembly_knee_mechanism/knee_rods.jpg)
 
 3. Set this subassembly aside, as it will be used at the end of the next step.
 
-## shin
+## Shin
 
 Components:
 | Category | Name | Specification | Qty / Subassembly | Qty / Robot |
 |---|---|---|---:|---:|
 | motor | RobStride O5 | actuator | 2 | 4 |
-| bearing | Bearing | 15x21x4 | 4 | 8 |
-| fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 3 | 6 |
-| fastener_screw | M3 screw | M3 x 17.5 cyl head | 4 | 8 |
-| fastener_screw | M3 screw | M3 x 10 cyl head | 24 | 48 |
-| fastener_screw | M4 screw | M4 x 18 cyl head | 16 | 32 |
-| fastener_screw | M4 screw | M4 x 10 cyl head | 9 | 18 |
+| bearing | Bearing | 15x21x4 | 2 | 4 |
+| fastener_nut | Nut M3 | M3 nut | 1 | 2 |
+| fastener_screw | M3 screw | M3 x 50 cyl head | 1 | 2 |
+| fastener_screw | M4 screw | M4 x 18 cyl head | 4 | 8 |
+| fastener_screw | M4 screw | M4 x 10 cyl head | 16 | 32 |
+| fastener_screw | M2.5 screw | M2.5 x 8 cyl head | 9 | 18 |
+| fastener_nut | Nut M4 | M4 nut | 4 | 8 |
+
 | fastener_nut | Nut M4 | M4 nut | 3 | 6 |
-| fastener_insert | Heat-set insert M3 | brass threaded insert M3 | 4 | 8 |
 
 STL To Print:
 | Name | Quantity |
@@ -362,7 +365,6 @@ STL To Print:
 | left_leg/shin/tibias2_shin_spacer_2.stl | 1 |
 | left_leg/shin/tibias2_tibias12_sym_4.stl | 1 |
 | left_leg/shin/tibias2_tibias22_sym_4.stl | 1 |
-| left_leg/thigh/femur_v2_hat_femur_2.stl | 1 |
 | left_leg/ankle/ujoint_hat_small_12.stl | 1 |
 | left_leg/ankle/ujoint_hat_small_22.stl | 1 |
 | right_leg/shin/spacer12_5_9_4_5.stl | 1 |
@@ -371,20 +373,46 @@ STL To Print:
 | right_leg/shin/tibias2_shin_spacer_2.stl | 1 |
 | right_leg/shin/tibias2_tibias12.stl | 1 |
 | right_leg/shin/tibias2_tibias22.stl | 1 |
-| right_leg/thigh/femur_v2_hat_femur_2.stl | 1 |
 | right_leg/ankle/ujoint_hat_small_12.stl | 1 |
 | right_leg/ankle/ujoint_hat_small_22.stl | 1 |
 
 Assembly steps:
-1. Install M3 inserts first (`4` per shin).
-2. Insert bearings and pins/goupilles.
-3. Mandatory: place the full knee mechanism (including motor) inside before final shin closure.
-4. For re-assembly in tight fit conditions: gently shift the bearing with light hammer taps to create spacer clearance, insert spacer, then re-seat bearing.
-5. Install and route the shin sub-cable before closure (`hardware/electronics/cabling/README.md`).
-6. Preferable: place ankle module now (recommended, not mandatory).
-7. Close and screw shin structure, then verify internal parts still move.
 
-## ankle_mechanism
+> Comment: You will do these steps for each leg.
+
+1. Insert two 15x21x4 bearings into the slots on the tibia and two pins at the top and bottom of the tibia.
+
+> Comment: This is a very tight fit! I applied WD-40 and gently tapped with a hammer to insert the bearings, but on my first attempt I cracked both slots. You can repair using a soldering iron to melt the 3D printed parts back together, but that's not ideal. Slow and gentle is the best course of action here.
+
+![Tibia with bearings and pins](photos/assembly_shins/shin_tibia_bearings.jpg)
+
+2. Attach the RobStride o5 motors to the tibias. Align them so that the cables will come out of the *front* of the tibia (the side without the top bearing). Double check that the back openings will align with the other tibia half. Secure with eight M3x10 screws.
+
+![Tibia motors](photos/assembly_shins/shin_tibia_motors.jpg)
+
+3. Place one half of the shin onto the foot's u-joint. Confirm the directionality - the bearing at the top of the tibia should face the back of the foot. Secure the bearing on the ujoint using ujoint_hat_small and fasten with three M2.5x8 screws.
+
+![Tibia motors](photos/assembly_shins/shin_tibia_foot_attach_1.jpg)
+
+4. Place the appropriate knee mechanism into the tibia top bearing.
+
+> Comment: Confirm orientation (shown in the next photo) as the part of the knee actuator that extends out should face the same direction as the actuating part of the top RobStride o5 motor in the tibia.
+
+![Tibia motors](photos/assembly_shins/shin_with_knee_mechanism.jpg)
+
+5. Place the second half of the tibia onto the first. This will be loose to start, so hold it tight as you secure it with four M4x18 screws above the ankle and secure with four M4 nuts. Secure the back side of the motors with four M3x10 screws, then use six M2.5 x 8 to add the u-joint hat and the tibia hat.
+
+![Tibia halves connected](photos/assembly_shins/shin_tibia_connected.jpg)
+
+6. Place an M3x50 screw through the openings where the tibia connects to the knee mechanism. Secure with an M3 nut.
+
+![Tibia knee mechanism screw location](photos/assembly_shins/shin_knee_mechanism_screw.jpg)
+
+7. Slide the tibia spacer between the two motors and secure with four M4 x 10 screws.
+
+![Tibia spacer](photos/assembly_shins/shin_tibia_spacer.jpg)
+
+## Ankle Mechanism
 
 Components:
 | Category | Name | Specification | Qty / Subassembly | Qty / Robot |
@@ -417,8 +445,58 @@ STL To Print:
 
 
 
+Assembly steps:
+
+1. Install the spherical joints on two ankle actuators using a 5x7x3 spacer, a 5x20 shoulder screw, and an M4 nut.
+
+![Joints on ankle actuators](photos/assembly_ankle_mechanism/ankle_mechanism_actuator_joints.jpg)
+
+2. Attach the ankle actuators to the Robstride o5 motors using 6 M4x20 screws per motor.
+
+![Attached ankle actuator](photos/assembly_ankle_mechanism/ankle_mechanism_actuator_attached.jpg)
+
+3. Attach the short and long tibia rods to the corresponding spherical joints using 2 M5x15 screws and a 5x7x3 spacer. Verify that the lower leg can move freely.
+
+![Lower leg side](photos/assembly_ankle_mechanism/ankle_complete_lower_leg.jpg)
+
+![Lower leg front](photos/assembly_ankle_mechanism/ankle_complete_lower_leg_front.jpg)
+
+## Final Assembly
+
+| Category | Name | Qty / Subassembly | Qty / Robot |
+|---|---|---:|---:|
+| bearing | 5x16x5 bearing | 2 | 4 |
+| fastener_axis | Shoulder screw 07534-05X40| 1 | 2 |
+| fastener_screw | M2.5 x 8 cyl head | 3 | 6 |
+| fastener_screw | M4 x 20 cyl head | 6 | 12 |
+| fastener_nut | M4 nut | 1 | 2 |
+
+STL To Print:
+| Name | Quantity |
+|---|---:|
+| left_leg/ankle_mechanism/bearing_spacer34_5_7_3.stl | 1 |
+| left_leg/ankle_mechanism/bearing_spacer44_5_7_3.stl | 1 |
+| left_leg/thigh/femur_v2_hat_femur_2.stl | 1 |
+| right_leg/ankle_mechanism/bearing_spacer34_5_7_3.stl | 1 |
+| right_leg/ankle_mechanism/bearing_spacer44_5_7_3.stl | 1 |
+| right_leg/thigh/femur_v2_hat_femur_2.stl | 1 |
 
 Assembly steps:
-1. Install spherical joints on rods (`2` per rod, `4` per leg, `8` per robot).
-2. Assemble rods, spacers, and ankle actuation parts, then screw.
-3. Verify mechanism moves freely through its range.
+
+1. Place two 5x16x5 bearings into the bottom of the femur. Place the bearings on the outside edge of the lower femur and push them in to the inner edge.
+
+![Lower femur bearings](photos/assembly_thighs/lower_femur_bearings.jpg)
+
+2. Attach the lower leg to the femur using a 5x40 shoulder screw, two 5xz7x3 spacers, and an M4 nut. Secure it with three M2.5x8 screws.
+
+![Femur joint hat](photos/assembly_thighs/femur_joint_hat.jpg)
+
+3. Attach the knee mechanism to motor 4/10 using 6 M4x20 screws.
+
+> Comment: Attach the furthest away hole first, then spin the motor into position, otherwise the femur will block the screw entry point without the ability to rotate the last hole out for tightening.
+
+![Femur to knee mechanism screw offset](photos/assembly_thighs/femur_to_knee_mechanism_screw_offset.jpg)
+
+At this point your robot should be mechanically assembled. For next steps, if you haven't done the electrical wiring during the process, do that now, otherwise move on to the LeRobot Humanoid Runtime.
+
+![Femur joint hat](photos/robot_complete.jpg)
