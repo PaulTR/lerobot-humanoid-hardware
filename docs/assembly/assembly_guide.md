@@ -160,7 +160,7 @@ Assembly steps:
 
 ![Hipz 12 Motor Mount](photos/assembly_hips/hipz12_motor_mount.jpg)
 
-4. Attach hip_z_hipz12 and hip_z_hipz12_sym to motor 1 or 7, respectively, using three M3x10 screws. 
+4. Attach hip_z_hipz12 and hip_z_hipz12_sym to motor 1 or 7, respectively, using three M3x10 screws and three pins. 
 
 > Comment: You will need a longer hex key than what comes with most screw sets. I had success with a 13cm key.
 
@@ -314,8 +314,7 @@ Components:
 | Category | Name | Specification | Qty / Subassembly | Qty / Robot |
 |---|---|---|---:|---:|
 | bearing | Bearing | 15x21x4 | 2 | 4 |
-| fastener_screw | M3 screw | M3 x 12.5 cyl head | 3 | 6 |
-| fastener_screw | M4 screw | M4 x 16 cyl head | 8 | 16 |
+| fastener_screw | M3 screw | M3 x 18 cyl head | 3 | 6 |
 
 STL To Print:
 | Name | Quantity |
@@ -329,11 +328,15 @@ STL To Print:
 
 
 Assembly steps:
-1. Pre-assemble the knee mechanism with its motor and rods.
-2. Keep the knee interface slightly loose but still movable.
-3. Integrate this knee mechanism inside the shin assembly first.
-4. Fix the knee motor to the thigh at the end of leg integration.
-5. Check that knee motion is smooth and not binding.
+1. Place a 15x21x4 bearing on either side of the knee actuator.
+
+![Knee actuator with bearings](photos/assembly_knee_mechanism/knee_actuator.jpg)
+
+2. Attach knee_rod12 and knee_rod22 to the knee actuator, then align and secure with three M3x18 screws
+
+![Knee rods for subassembly](photos/assembly_knee_mechanism/knee_rods.jpg)
+
+3. Set this subassembly aside, as it will be used at the end of the next step.
 
 ## shin
 
