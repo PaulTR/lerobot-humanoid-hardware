@@ -91,9 +91,6 @@ def parse_reply_id(arbitration_id: int) -> tuple[int, int, int]:
     target_field = arbitration_id & 0xFF
     return comm_type, host_field, target_field
 
-
-# --- The Logic from the script that worked ---
-
 def ping_private(bus: Any, motor_id: int) -> bool:
     arb_id = make_ext_id(0x00, 0xFD, motor_id)
     bus.send(can.Message(arbitration_id=arb_id, data=[0]*8, is_extended_id=True))
